@@ -1,0 +1,41 @@
+@font-face {
+  font-family: "Poppins";
+  src: url("../assets/fonts/Poppins-Regular.ttf");
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: "Poppins";
+  text-decoration: none;
+}
+
+
+body {
+  overflow-x: hidden;
+
+}
+
+.all{
+  overflow: hidden;
+}
+
+section{
+  padding-top: 15vh;
+}
+
+@media (max-width: 1000px) {
+  section{
+    padding-top: 10vh;
+  }
+}
+
+@media (max-width: 600px) {
+  section{
+    padding-top: 2vh;
+  }
+}
+
+
+
