@@ -1,6 +1,5 @@
 import Image from 'next/image';
-import Img from '../assets/RoutesImg/position.png';
-import Wave from '../assets/img/wave.png';
+import Img from '../assets/RoutesImg/optimized.png';
 import styles from '@/styles/Main.module.scss'
 import Link from 'next/link';
 import NavBar from '@/Navigation/nav';
@@ -8,7 +7,6 @@ import NavBar from '@/Navigation/nav';
 const Position = () => {
     return(
         <div>
-        <Image className={styles.wave} src={Wave}  alt='Prijelaz na drugu pozadinu'/>
         <section className={`${styles.oagenciji} ${styles.container}`}>
             <NavBar/>
             <div className={styles.contentBlock}>

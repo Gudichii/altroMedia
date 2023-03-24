@@ -8,7 +8,6 @@ import NavBar from '@/Navigation/nav';
 const Copywriting = () => {
     return(
         <div>
-        <Image className={styles.wave} src={Wave}  alt='Prijelaz na drugu pozadinu'/>
         <section className={`${styles.oagenciji} ${styles.container}`}>
             <NavBar/>
             <div className={styles.contentBlock}>

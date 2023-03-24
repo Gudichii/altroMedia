@@ -5,11 +5,11 @@
     position: fixed;
     z-index: 1;
     top: 80vh;
-    background-color: #91ed96a8;
+    background-color: #91ed968d;
     display: flex;
-    align-items: center;
     justify-content: center;
     flex-wrap: wrap;
+    align-items: center;
     
     p{
         margin: 0;
@@ -37,6 +37,7 @@
 
 @media(max-widt: 600px){
     .cookie{
-        height: 30vh;
+        top: 75vh;
+        height: 20vh;
     }
 }

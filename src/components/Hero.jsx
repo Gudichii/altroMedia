@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import wave from '../assets/img/wave.png'
-import seorocket from '../assets/img/seorocket.png';
+import seorocket from '../assets/img/seorocket.webp';
 import styles from '@/styles/Main.module.scss';
 import NavBar from '../Navigation/nav';
 

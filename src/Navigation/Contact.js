@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Wave from '../assets/img/wave.png';
 import styles from '@/styles/Main.module.scss';
+import Link from 'next/link';
 const Contact = () =>{
     return(
         <div>
@@ -42,7 +43,7 @@ const Contact = () =>{
             <Image className={styles.wave2} src={Wave} alt='background switch'/>
             <div className={styles.footerContent}>
                 <p className={styles.paragraph}>@ AltroMedia Inc.</p>
-                <p className={styles.paragraph}>Privacy policy</p>
+                <Link href={'privacyPolicy'} className={styles.paragraph}>Privacy policy</Link>
             </div>
         </div>
         </div>

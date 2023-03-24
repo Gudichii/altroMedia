@@ -9,7 +9,7 @@ const oagenciji = () => {
     return(
         <>
         <Image className={styles.WaveReverse} src={WaveReverse}  alt='Prijelaz na drugu pozadinu'/>
-        <section id='agency' className={`${styles.oagenciji} ${styles.container}`}>
+        <section id='agency' className={`${styles.oagenciji} ${styles.agencySection} ${styles.container}`}>
             <div className={styles.contentBlock}>
                 <div className={styles.content}>
                     <h2 className={styles.leftTitle}>O Agenciji</h2>

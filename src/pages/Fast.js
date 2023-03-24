@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import fastImg from '../assets/RoutesImg/fast.png';
+import fastImg from '../assets/RoutesImg/position.png';
 import Wave from '../assets/img/wave.png';
 import styles from '@/styles/Main.module.scss'
 
@@ -9,7 +9,6 @@ import Link from 'next/link';
 const fast = () => {
     return(
         <div>
-        <Image className={styles.wave} src={Wave}  alt='Prijelaz na drugu pozadinu'/>
             <section className={`${styles.oagenciji} ${styles.container}`}>
                 <NavBar/>
                 <div className={styles.contentBlock}>

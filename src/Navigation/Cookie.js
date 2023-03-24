@@ -24,7 +24,7 @@ function Cookies() {
           </div>
       )}
     </div>
-  );
+  );s
 }
 
 export default Cookies;

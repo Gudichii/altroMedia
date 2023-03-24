@@ -8,7 +8,6 @@ import NavBar from '@/Navigation/nav';
 const Branding = () => {
     return(
         <>
-        <Image className={styles.wave} src={Wave}  alt='Prijelaz na drugu pozadinu'/>
         <section className={`${styles.oagenciji} ${styles.container}`}>
             <NavBar/>
             <div className={styles.contentBlock}>
