@@ -12,7 +12,7 @@ const oagenciji = () => {
         <section id='agency' className={`${styles.oagenciji} ${styles.agencySection} ${styles.container}`}>
             <div className={styles.contentBlock}>
                 <div className={styles.content}>
-                    <h2 className={styles.leftTitle}>O Agenciji</h2>
+                    <h2 className={styles.leftTitle}>Who we are?</h2>
                     <p className={styles.paragraph}>
                     AltroMedia is a talented team of software engineers and marketers 
                     in the field of SEO with a passion for creating digital products. 

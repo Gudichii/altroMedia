@@ -20,6 +20,7 @@
             line-height: 32px;
             padding-top: 6vh;
             padding-bottom: 0vh;
+            margin-bottom: 4vh;
         }
         
         .Howtitle{
@@ -49,7 +50,57 @@
           .navBtn{
             width: 160px;
         }
+    }
+    @media only screen and (max-height: 900px){
+        .title{
+            font-size: 32px;
+            line-height: 38px;
+        }
+        .middleTitle{
+            font-size: 24px;
+            line-height: 24px;
+        }
 
+        .subtitle1{
+            font-size: 32px;
+            line-height: 32px;
+            padding-top: 6vh;
+            padding-bottom: 0vh;
+        }
+        .subtitle2{
+            font-size: 32px;
+            line-height: 32px;
+            padding-top: 6vh;
+            padding-bottom: 0vh;
+        }
+        
+        .Howtitle{
+            font-size: 24px;
+            line-height: 24px;
+        }
+        
+        .leftTitle{
+            font-size: 32px;
+            line-height: 32px;
+            padding-top: 5vh;
+            padding-bottom: 0vh;
+        }
+        .paragraph{
+            p{
+                font-size: 12px;
+                line-height: 14px;
+              }
+        }
+        .btn{
+
+              a{
+              font-size: 13px;
+              line-height: 18px;
+              }
+          }
+          .navBtn{
+            width: 160px;
+        }
     }
 };
 

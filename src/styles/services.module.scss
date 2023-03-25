@@ -58,6 +58,12 @@
         }
     }
     }
+    @media only screen and (max-height: 800px){
+        .img{
+            height: 70%;
+            width: 70%;
+        }
+    }
 
     @media only screen and (max-width: 1800px) {
         .services{
