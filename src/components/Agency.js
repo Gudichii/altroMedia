@@ -4,6 +4,8 @@ import Oagenciji from '../assets/img/o-agenciji.png';
 import WaveReverse from '../assets/img/wave-reverse.png';
 import styles from '@/styles/Main.module.scss'
 import { Link } from 'react-scroll';
+// import corect from '../assets/img/corect.png';
+
 
 const oagenciji = () => {
     return(
