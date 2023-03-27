@@ -9,7 +9,7 @@ const Branding = () => {
     return(
         <>
         <section className={`${styles.oagenciji} ${styles.container}`}>
-            <NavBar/>
+            {/* <NavBar/> */}
             <div className={styles.contentBlock}>
                 <div className={styles.content}>
                     <h2 className={styles.leftTitle}>Branding</h2>
@@ -19,7 +19,7 @@ const Branding = () => {
                     leads to increased sales and customer loyalty. By investing in branding, 
                     businesses can establish a unique identity and attract and retain customers more easily.
                     </p>
-                    <div className={`${styles.link} ${styles.email}`}><span className={styles.span}>Email:</span><a>seoagncy@gmail.com</a></div>
+                    {/* <div className={`${styles.link} ${styles.email}`}><span className={styles.span}>Email:</span><a>seoagncy@gmail.com</a></div> */}
                     <Link className={`${styles.btn} ${styles.navBtn} ${styles.ContactBtn}`} href={`/#${'contact'}`}>
                        Get in touch
                     </Link>

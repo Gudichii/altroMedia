@@ -10,7 +10,7 @@ const Hero = () =>{
 
   return(
     <section className={`${styles.heroSection} ${styles.container}`}>
-        < NavBar />
+        {/* < NavBar /> */}
         <div className={styles.main}>
           <div className={styles.contentBlock}>
             <h1 className={`${styles.title} ${styles.h1}`}>We bellieve in your <span className={styles.span}>digital future.</span></h1>

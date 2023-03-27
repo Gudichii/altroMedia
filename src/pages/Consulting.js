@@ -9,7 +9,7 @@ const Consulting = () => {
     return(
         <div>
         <section className={`${styles.oagenciji} ${styles.container}`}>
-            <NavBar/>
+            {/* <NavBar/> */}
             <div className={styles.contentBlock}>
                 <div className={styles.content}>
                     <h2 className={styles.leftTitle}>Consulting</h2>
@@ -19,7 +19,7 @@ const Consulting = () => {
                     let us drive you, identify your issue, 
                     and point your company in the right path.
                     </p>
-                    <div className={`${styles.link} ${styles.email}`}><span className={styles.span}>Email:</span><a>seoagncy@gmail.com</a></div>
+                    {/* <div className={`${styles.link} ${styles.email}`}><span className={styles.span}>Email:</span><a>seoagncy@gmail.com</a></div> */}
                     <Link className={`${styles.btn} ${styles.navBtn} ${styles.ContactBtn}`} href={`/#${'contact'}`}>
                        Get in touch
                     </Link>

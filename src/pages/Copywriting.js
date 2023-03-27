@@ -9,7 +9,7 @@ const Copywriting = () => {
     return(
         <div>
         <section className={`${styles.oagenciji} ${styles.container}`}>
-            <NavBar/>
+            {/* <NavBar/> */}
             <div className={styles.contentBlock}>
                 <div className={styles.content}>
                     <h2 className={styles.leftTitle}>Copywriting</h2>
@@ -19,7 +19,7 @@ const Copywriting = () => {
                     and resonate with their target audience, resulting in a higher return on investment. 
                     By investing in copywriting, businesses can elevate their brand and reach their full potential.
                     </p>
-                    <div className={`${styles.link} ${styles.email}`}><span className={styles.span}>Email:</span><a>seoagncy@gmail.com</a></div>
+                    {/* <div className={`${styles.link} ${styles.email}`}><span className={styles.span}>Email:</span><a>seoagncy@gmail.com</a></div> */}
                     <Link className={`${styles.btn} ${styles.navBtn} ${styles.ContactBtn}`} href={`/#${'contact'}`}>
                        Get in touch
                     </Link>

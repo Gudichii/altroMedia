@@ -8,7 +8,7 @@ const Position = () => {
     return(
         <div>
         <section className={`${styles.oagenciji} ${styles.container}`}>
-            <NavBar/>
+            {/* <NavBar/> */}
             <div className={styles.contentBlock}>
                 <div className={styles.content}>
                     <h2 className={styles.leftTitle}>Position on google</h2>
@@ -20,7 +20,7 @@ const Position = () => {
                         the search results can help to build trust and credibility with potential customers, 
                         as it is seen as an indication of your business's authority in your industry.
                     </p>
-                    <div className={`${styles.link} ${styles.email}`}><span className={styles.span}>Email:</span><a>seoagncy@gmail.com</a></div>
+                    {/* <div className={`${styles.link} ${styles.email}`}><span className={styles.span}>Email:</span><a>seoagncy@gmail.com</a></div> */}
                     <Link className={`${styles.btn} ${styles.navBtn} ${styles.ContactBtn}`} href={`/#${'contact'}`}>
                        Get in touch
                     </Link>

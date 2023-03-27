@@ -10,7 +10,7 @@ const fast = () => {
     return(
         <div>
             <section className={`${styles.oagenciji} ${styles.container}`}>
-                <NavBar/>
+                {/* <NavBar/> */}
                 <div className={styles.contentBlock}>
                     <div className={styles.content}>
                         <h2 className={styles.leftTitle}>Website creation</h2>
@@ -22,7 +22,7 @@ const fast = () => {
                         website speed and design are important ranking factors for search engines,
                          making it more likely for your business to be seen by potential customers.
                         </p>
-                        <div className={`${styles.link} ${styles.email}`}><span className={styles.span}>Email:</span><a>seoagncy@gmail.com</a></div>
+                        {/* <div className={`${styles.link} ${styles.email}`}><span className={styles.span}>Email:</span><a>seoagncy@gmail.com</a></div> */}
                         <Link className={`${styles.btn} ${styles.navBtn} ${styles.ContactBtn}`} href={`/#${'contact'}`}>
                         Get in touch
                         </Link>
