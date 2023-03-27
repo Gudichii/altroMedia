@@ -10,7 +10,6 @@ import Copywrting from '../assets/img/copywriting.png';
 
 const Services = () =>{
     return(
-        <div className={styles.background}>
         <section id='services' className={`${styles.services} ${styles.container}`}>
             <div className={styles.serviceTitles}> 
                 <h2 className={styles.subtitle1}>Our solutions</h2>
@@ -42,7 +41,6 @@ const Services = () =>{
                 </Link>
             </div>
         </section>
-        </div>
     )
 }
 

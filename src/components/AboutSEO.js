@@ -5,7 +5,6 @@ import styles from '@/styles/Main.module.scss'
 
 const AboutSEO = () =>{
     return(
-        <div className={styles.background}>
         <section id='aboutSEO' className={styles.AboutSEO}>
             <h2 className={styles.subtitle2}>Is SEO optimisation for you?</h2>
             <div className={styles.contentBlock2}>
@@ -51,7 +50,6 @@ const AboutSEO = () =>{
                 </div>
             </div>
         </section>
-    </div>
         
     )
 }
