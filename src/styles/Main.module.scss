@@ -19,11 +19,27 @@
     src: url("../assets/fonts/Poppins-Bold.ttf");
 }
 
+$black: #000000;
+$yellow: #FFC41D;
+$background: #F5F4F4;
+
+:root {
+    --text-color: #000000; /* Default text color */
+    --bg-color: #F5F4F4; /* Default background color */
+}
+  
+  .dark-mode {
+    --text-color: #000000; /* Text color for dark mode */
+    --bg-color: #F5F4F4; /* Background color for dark mode */
+}
+
+
 
 .background{
     margin-top: -2px;
     width: 100vw;
-    background-color:#F5F4F4 ;
+    color: var(--text-color);
+    background-color: var(--bg-color);
 }
 
 
@@ -102,6 +118,20 @@
     }
   }
 
+  @media (prefers-color-scheme: dark) {
+    body {
+      color: var(--text-color);
+      background-color: var(--bg-color);
+    }
+  }
+  
+  /* Light mode styles */
+  @media (prefers-color-scheme: light) {
+    body {
+      color: var(--text-color);
+      background-color: var(--bg-color);
+    }
+  }
 
 @include btn;
 @include Mobile;
