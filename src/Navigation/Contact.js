@@ -85,7 +85,7 @@ const validateEmail = (email) => {
             
         </section>
         <div className={styles.footer}>
-            <Image className={styles.wave2} src={Wave} alt='background switch'/>
+            {/* <Image className={styles.wave2} src={Wave} alt='background switch'/> */}
             <div className={styles.footerContent}>
                 <p className={styles.paragraph}>@ AltroMedia Inc.</p>
                 <Link href={'privacyPolicy'} className={styles.paragraph}>Privacy policy</Link>

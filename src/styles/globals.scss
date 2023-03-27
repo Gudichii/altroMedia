@@ -9,6 +9,17 @@
   margin: 0;
   font-family: "Poppins";
   text-decoration: none; 
+  color: #000000;
+}
+
+:root {
+  --text-color: #000000; /* Default text color */
+  --bg-color: #fff; /* Default background color */
+}
+
+.dark-mode {
+  --text-color: #000000; /* Text color for dark mode */
+  --bg-color: #F5F4F4; /* Background color for dark mode */
 }
 
 
@@ -37,5 +48,20 @@ section{
   }
 }
 
+
+@media (prefers-color-scheme: dark) {
+  body {
+    color: var(--text-color);
+    background-color: var(--bg-color);
+  }
+}
+
+/* Light mode styles */
+@media (prefers-color-scheme: light) {
+  body {
+    color: var(--text-color);
+    background-color: var(--bg-color);
+  }
+}
 
 

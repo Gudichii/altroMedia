@@ -28,7 +28,7 @@ const Hero = () =>{
             <Image className={styles.seorocket} src={seorocket} alt="A responsive image" />
           </div>
         </div>
-        <Image  className={styles.wave} src={wave} alt='promjena pozadinske boje u sivu boju.' />
+        {/* <Image  className={styles.wave} src={wave} alt='promjena pozadinske boje u sivu boju.' /> */}
      </section>
     )
 }
