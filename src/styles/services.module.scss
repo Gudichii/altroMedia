@@ -60,7 +60,7 @@
     }
     @media only screen and (max-height: 800px){
         .img{
-            height: 70%;
+            height: 65%;
             width: 70%;
         }
     }
@@ -102,3 +102,15 @@
         }
     }
     
+    @media only screen and (max-width: 600px){
+        .services{
+           .contentBlock3{
+                .service{
+                    .img{
+                        height: auto;
+                        width: 65%;
+                    }
+                }
+            }
+        }
+    }

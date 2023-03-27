@@ -7,25 +7,25 @@ const AboutSEO = () =>{
     return(
         <div className={styles.background}>
         <section id='aboutSEO' className={styles.AboutSEO}>
-            <h2 className={styles.subtitle2}>You need SEO  optimized and fast website if:</h2>
+            <h2 className={styles.subtitle2}>Is SEO optimisation for you?</h2>
             <div className={styles.contentBlock2}>
                 <div className={`${styles.box} ${styles.corect}`}>
                     <ul className={styles.list}>
                         <li className={styles.listElement}>
                             <Image className={styles.img2} src={corect} alt='Trebate SEO ako vam ovo predtsvalja problem'/>
-                            <p className={styles.paragraph}>You are running an online bussines.</p>
+                            <p className={styles.paragraph}>Your website is important to you</p>
                         </li>
                         <li className={styles.listElement}>
                             <Image className={styles.img2} src={corect} alt='Trebate SEO ako vam ovo predtsvalja problem'/>
-                            <p className={styles.paragraph}>You want to improve your online income.</p>
+                            <p className={styles.paragraph}>You want to reach your full digital potential</p>
                         </li>
                         <li className={styles.listElement}>
                             <Image className={styles.img2} src={corect} alt='Trebate SEO ako vam ovo predtsvalja problem'/>
-                            <p className={styles.paragraph}>You want your target group to find you more easily.</p>
+                            <p className={styles.paragraph}>You want your clients to find you effortlessly</p>
                         </li>
                         <li className={styles.listElement}>
                             <Image className={styles.img2} src={corect} alt='Trebate SEO ako vam ovo predtsvalja problem'/>
-                            <p className={styles.paragraph}>You're tired of spending for pointless advertisements on Google and social media.</p>
+                            <p className={styles.paragraph}>You are spending money on ads and don't see clear benefits</p>
                         </li>
                     </ul>
                 </div>
@@ -33,19 +33,19 @@ const AboutSEO = () =>{
                 <ul className={styles.list}>
                         <li className={styles.listElement}>
                             <Image className={styles.img2} src={incorect} alt='Trebate SEO ako vam ovo predtsvalja problem'/>
-                            <p className={styles.paragraph}>Do not run online bussines.</p>
+                            <p className={styles.paragraph}>If your website is not generating the desired amount of revenue</p>
                         </li>
                         <li className={styles.listElement}>
                             <Image className={styles.img2} src={incorect} alt='Trebate SEO ako vam ovo predtsvalja problem'/>
-                            <p className={styles.paragraph}>You don't want to conduct commerce or earn money online.</p>
+                            <p className={styles.paragraph}>You don't want any improvements</p>
                         </li>
                         <li className={styles.listElement}>
                             <Image className={styles.img2} src={incorect} alt='Trebate SEO ako vam ovo predtsvalja problem'/>
-                            <p className={styles.paragraph}>Your customers find you easily on google.</p>
+                            <p className={styles.paragraph}>You are satisfied with where you come up in searches</p>
                         </li>
                         <li className={styles.listElement}>
                             <Image className={styles.img2} src={incorect} alt='Trebate SEO ako vam ovo predtsvalja problem'/>
-                            <p className={styles.paragraph}>You believe that your income cannot be higher.</p>
+                            <p className={styles.paragraph}>You don't want to scale your business</p>
                         </li>
                     </ul>
                 </div>

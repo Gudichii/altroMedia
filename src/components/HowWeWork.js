@@ -10,24 +10,27 @@ const How = () => {
                     <div className={styles.blockTitle}>
                         <span className={styles.spanNumber}>01</span>
                         <h3 className={styles.Howtitle}>
-                            Listen to your problems
+                        Assesment 
                         </h3>
                     </div>
                     <p className={styles.paragraph}>
-                    We believe that effective problem-solving starts with listening, 
-                    so we focus our energy on learning about and identifying all of your issues.
+                    Effective solutions begin with an assessment of the current state. 
+                    On the 1st meeting, 
+                    we focus on learning more about you and 
+                    identifying room for improvement..
                     </p>
                 </div>
                 <div className={`${styles.block} ${styles.greenBlock}`}>
                     <div className={styles.blockTitle}>
                         <span className={styles.spanNumber}>02</span>
                         <h3 className={styles.Howtitle}>
-                            Open the door for you
+                            Custom solutions
                         </h3>
                     </div>
                     <p className={styles.paragraph}>
-                    We understand that every client is unique,
-                    with their set of challenges, so we take a customized approach to problem-solving
+                    We understand that every client is unique, 
+                    with their set of challenges, 
+                    so we take a customized approach to problem-solving
                     </p>
                 </div>
             </div>

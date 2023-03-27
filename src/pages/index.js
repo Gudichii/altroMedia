@@ -1,4 +1,4 @@
-import { Cookie, Inter } from 'next/font/google';
+import { Inter } from 'next/font/google';
 // import styles from '@/styles/Main.module.scss'
 import Head from 'next/head';
 import Hero from '@/components/Hero'
@@ -8,9 +8,6 @@ import Agency from '@/components/Agency';
 import How from '@/components/HowWeWork';
 import Contact from '@/Navigation/Contact';
 import Cookies from '@/Navigation/Cookie';
-// import Policy from '@/pages/privacyPolicy';
-
-
 
 const inter = Inter({ subsets: ['latin'] })
 

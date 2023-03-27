@@ -30,19 +30,6 @@
           
         }
       }
-      // .seorocket{
-      //   width: 1800px;
-      //   height: 100%;
-      // }
-    }
-    .wave{
-      position: absolute;
-      width: 100vw;
-      height: 15vh;
-      left: 0;
-      right: 0;
-      top: 92%;
-      z-index: -1000;
     }
   }
   
@@ -58,20 +45,6 @@
       }
     }
   }
-
-  // @media only screen and (max-height: 690px){
-  //   .heroSection{
-  //     justify-content: space-between;
-  //     .main{
-  //       .seorocket{
-  //         height: 100px;
-  //         width: 380px;
-  //       }
-  //     }
-  //   }
-  // }
-  
-
 
   @media only screen and (max-width: 1040px){
     .heroSection{

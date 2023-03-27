@@ -13,8 +13,7 @@ const Services = () =>{
         <div className={styles.background}>
         <section id='services' className={`${styles.services} ${styles.container}`}>
             <div className={styles.serviceTitles}> 
-                <h2 className={styles.subtitle1}>Solutions we provide</h2>
-                <span className={`${styles.span} ${styles.paragraph}`}>“let the results to talk”</span>
+                <h2 className={styles.subtitle1}>Our solutions</h2>
             </div>
             <div className={styles.contentBlock3}>
                 <Link className={styles.service} href={'Fast'}>
@@ -31,7 +30,7 @@ const Services = () =>{
                 </Link>
                 <Link className={styles.service} href={'Branding'}>
                     <Image className={styles.img} src={Branding} alt='' />
-                    <h3 className={styles.middleTitle}>Branding</h3>
+                    <h3 className={styles.middleTitle}>eCommerc SEO</h3>
                 </Link>
                 <Link className={styles.service} href={'Copywriting'}>
                     <Image className={styles.img} src={Copywrting} alt='' />

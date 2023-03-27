@@ -48,8 +48,8 @@ const validateEmail = (email) => {
         <div>
         <section id='contact' className={`${styles.orderSection} ${styles.container}`}>
             <div className={styles.content}>
-                <h2 className={styles.subtitle1}>If you believe that your website could be improved,
-                    <span className={styles.span}> you are correct.</span>
+                <h2 className={styles.subtitle1}>Discover the wonders of a well-optimized site 
+                    <span className={styles.span}> with our help.</span>
                 </h2>
                 <p>
                     If you have any questions or concerns, or simply need some advice, 
@@ -57,7 +57,6 @@ const validateEmail = (email) => {
                     We are aware that time is of the importance, 
                     so please anticipate a quick response.
                 </p>
-                {/* <div className={`${styles.link} ${styles.email}`}><span className={styles.span}>Email:</span><a>seoagncy@gmail.com</a></div> */}
             </div>
             <div className={styles.formContent}>
                 <form className={styles.form} ref={form} onSubmit={sendEmail}>
@@ -71,14 +70,14 @@ const validateEmail = (email) => {
                         {emailError && <p className={styles.paragraph}>{emailError}</p>}
                     </div>
                     <div className={styles.formBlock}>
-                        <p className={styles.paragraph} >What I can do to assist you?</p>
+                        <p className={styles.paragraph}>How can we assist?</p>
                         <input name='user_goal' type="text" />
                     </div>
                     <div className={styles.formBlock}>
-                        <p className={styles.paragraph}>Additional message</p>
+                        <p className={styles.paragraph}>Additional message:</p>
                         <input name='user_massage' type="text" />
                     </div>
-                    <button type="submit" value="Send" className={`${styles.btn} ${styles.navBtn}`}><a>Pošalji!</a></button>
+                    <button type="submit" value="Send" className={`${styles.btn} ${styles.navBtn}`}><a>Send!</a></button>
                 </form>
                 {showModal && <Modal closeModal={closeModal} />}
             </div>
