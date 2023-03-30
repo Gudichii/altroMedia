@@ -2,16 +2,25 @@ import Image from 'next/image';
 import Img from '../assets/RoutesImg/fast.png';
 import styles from '@/styles/Main.module.scss'
 import Link from 'next/link';
-import NavBar from '@/Navigation/nav';
+import Head from 'next/head';
 
-const optimized = () => {
+
+const WebsiteOptimization = () => {
     return(
         <>
+        <Head>
+                <title>Website optimization services | AltroMedia</title>
+                <meta name="description" content="Improve your website's visibility and reach your target audience. 
+                Expert SEO & marketing services. Contact us now." />
+                <meta name="viewport" content="width=device-width, initial-scale=1" />
+                <meta name="google-site-verification" content="W-rtCF5w2J8bNo9N3f6zv3ZQgR8lwiN1w0QgnR9tWyQ" />
+                <meta name="robots" content="index,follow"></meta>
+                <link rel="canonical" href="https://altromedia.com/WebsiteOptimization"/>
+        </Head>
         <section className={`${styles.oagenciji} ${styles.container}`}>
-            {/* <NavBar/> */}
             <div className={styles.contentBlock}>
                 <div className={styles.content}>
-                    <h2 className={styles.leftTitle}>Optimized website</h2>
+                    <h1 className={styles.leftTitle}>Website optimization</h1>
                     <p className={styles.paragraph}>
                     A well-optimized website helps to attract and retain potential customers, 
                     leading to increased traffic and sales. By optimizing your website, you can 
@@ -19,7 +28,6 @@ const optimized = () => {
                     well-designed website is important for providing a positive user experience, 
                     which can lead to increased trust and credibility with potential customers.
                     </p>
-                    {/* <div className={`${styles.link} ${styles.email}`}><span className={styles.span}>Email:</span><a>seoagncy@gmail.com</a></div> */}
                     <Link className={`${styles.btn} ${styles.navBtn} ${styles.ContactBtn}`} href={`/#${'contact'}`}>
                        Get in touch
                     </Link>
@@ -31,4 +39,4 @@ const optimized = () => {
     )                                  
 }
 
-export default optimized;
+export default WebsiteOptimization;

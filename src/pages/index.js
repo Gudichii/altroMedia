@@ -22,6 +22,8 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
         <meta name="google-site-verification" content="W-rtCF5w2J8bNo9N3f6zv3ZQgR8lwiN1w0QgnR9tWyQ" />
+        <meta name="robots" content="index,follow"></meta>
+        <link rel="canonical" href="https://altromedia.com/"/>
 
       </Head>
       <div className='all'>

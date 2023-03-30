@@ -1,19 +1,25 @@
 import Image from 'next/image';
 import fastImg from '../assets/RoutesImg/position.png';
-import Wave from '../assets/img/wave.png';
 import styles from '@/styles/Main.module.scss'
-
-import NavBar from '@/Navigation/nav';
 import Link from 'next/link';
+import Head from 'next/head';
 
-const fast = () => {
+const WebsiteBuilding = () => {
     return(
         <div>
+            <Head>
+                <title>Website building services | AltroMedia</title>
+                <meta name="description" content="Get a custom-built website that converts visitors into customers. 
+                Expert web development services. Contact us now." />
+                <meta name="viewport" content="width=device-width, initial-scale=1" />
+                <meta name="google-site-verification" content="W-rtCF5w2J8bNo9N3f6zv3ZQgR8lwiN1w0QgnR9tWyQ" />
+                <meta name="robots" content="index,follow"></meta>
+                <link rel="canonical" href="https://altromedia.com/WebsiteBuilding"/>
+            </Head>
             <section className={`${styles.oagenciji} ${styles.container}`}>
-                {/* <NavBar/> */}
                 <div className={styles.contentBlock}>
                     <div className={styles.content}>
-                        <h2 className={styles.leftTitle}>Website creation</h2>
+                        <h2 className={styles.leftTitle}>Website building</h2>
                         <p className={styles.paragraph}>
                         A good and fast website is essential for any business in today's digital age. 
                         A website that loads quickly, is easy to navigate, and provides the necessary 
@@ -22,7 +28,6 @@ const fast = () => {
                         website speed and design are important ranking factors for search engines,
                          making it more likely for your business to be seen by potential customers.
                         </p>
-                        {/* <div className={`${styles.link} ${styles.email}`}><span className={styles.span}>Email:</span><a>seoagncy@gmail.com</a></div> */}
                         <Link className={`${styles.btn} ${styles.navBtn} ${styles.ContactBtn}`} href={`/#${'contact'}`}>
                         Get in touch
                         </Link>
@@ -34,4 +39,4 @@ const fast = () => {
     )                                  
 }
 
-export default fast;
+export default WebsiteBuilding;

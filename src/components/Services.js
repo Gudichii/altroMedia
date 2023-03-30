@@ -15,21 +15,21 @@ const Services = () =>{
                 <h2 className={styles.subtitle1}>Our solutions</h2>
             </div>
             <div className={styles.contentBlock3}>
-                <Link className={styles.service} href={'Fast'}>
+                <Link className={styles.service} href={'WebsiteBuilding'}>
                     <Image className={styles.img} src={OptimizacijaWebStranice } alt='' />
-                    <h3 className={styles.middleTitle}>Website creation</h3>
+                    <h3 className={styles.middleTitle}>Website building</h3>
                 </Link>
-                <Link className={styles.service} href={'Optimized'}>
+                <Link className={styles.service} href={'WebsiteOptimization'}>
                     <Image className={styles.img} src={PregledWebStranice} alt='' />
                     <h3 className={styles.middleTitle}>Website optimization</h3>
                 </Link>
-                <Link className={styles.service} href={'Position'}>
+                <Link className={styles.service} href={'WebsiteVisibility'}>
                     <Image className={styles.img} src={PoozicijaNaGoogleu} alt='' />
-                    <h3 className={styles.middleTitle}>Position on google</h3>
+                    <h3 className={styles.middleTitle}>Website visibility</h3>
                 </Link>
-                <Link className={styles.service} href={'Branding'}>
+                <Link className={styles.service} href={'eCommerce'}>
                     <Image className={styles.img} src={Branding} alt='' />
-                    <h3 className={styles.middleTitle}>eCommerc SEO</h3>
+                    <h3 className={styles.middleTitle}>eCommerce SEO</h3>
                 </Link>
                 <Link className={styles.service} href={'Copywriting'}>
                     <Image className={styles.img} src={Copywrting} alt='' />

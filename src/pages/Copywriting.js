@@ -1,18 +1,26 @@
 import Image from 'next/image';
 import Img from '../assets/RoutesImg/copywriting.png';
-import Wave from '../assets/img/wave.png';
 import styles from '@/styles/Main.module.scss'
 import Link from 'next/link';
-import NavBar from '@/Navigation/nav';
+import Head from 'next/head';
 
 const Copywriting = () => {
     return(
         <div>
+        <Head>
+                <title>Copywriting services | AltroMedia</title>
+                <meta name="description" content="Boost conversions with persuasive copy. 
+                Expert copywriting services for web, email, and more. Contact us now. 
+                We'll help you achieve your online goals." />
+                <meta name="viewport" content="width=device-width, initial-scale=1" />
+                <meta name="google-site-verification" content="W-rtCF5w2J8bNo9N3f6zv3ZQgR8lwiN1w0QgnR9tWyQ" />
+                <meta name="robots" content="index,follow"></meta>
+                <link rel="canonical" href="https://altromedia.com/Consulting"/>
+            </Head>
         <section className={`${styles.oagenciji} ${styles.container}`}>
-            {/* <NavBar/> */}
             <div className={styles.contentBlock}>
                 <div className={styles.content}>
-                    <h2 className={styles.leftTitle}>Copywriting</h2>
+                    <h1 className={styles.leftTitle}>Copywriting</h1>
                     <p className={styles.paragraph}>
                     Professional copywriting ensures that a business's marketing materials, 
                     website content, and advertising copy effectively communicate their message 

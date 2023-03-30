@@ -2,18 +2,27 @@ import Image from 'next/image';
 import Img from '../assets/RoutesImg/optimized.png';
 import styles from '@/styles/Main.module.scss'
 import Link from 'next/link';
-import NavBar from '@/Navigation/nav';
+import Head from 'next/head';
 
-const Position = () => {
+const WebsiteVisibility = () => {
     return(
         <div>
+        <Head>
+                <title>Website visibility | AltroMedia</title>
+                <meta name="description" content="Maximize website performance with expert optimization. 
+                Boost speed, user experience & SEO. 
+                Contact us now." />
+                <meta name="viewport" content="width=device-width, initial-scale=1" />
+                <meta name="google-site-verification" content="W-rtCF5w2J8bNo9N3f6zv3ZQgR8lwiN1w0QgnR9tWyQ" />
+                <meta name="robots" content="index,follow"></meta>
+                <link rel="canonical" href="https://altromedia.com/WebsiteVisibility"/>
+        </Head>
         <section className={`${styles.oagenciji} ${styles.container}`}>
-            {/* <NavBar/> */}
             <div className={styles.contentBlock}>
                 <div className={styles.content}>
-                    <h2 className={styles.leftTitle}>Position on google</h2>
+                    <h2 className={styles.leftTitle}>Website visibility</h2>
                     <p className={styles.paragraph}>
-                        AHaving the best possible position on Google is essential for any business that wants to succeed in 
+                        Having the best possible position on Google is essential for any business that wants to succeed in 
                         today's digital age. When potential customers search for products or services 
                         related to your business on Google, they are more likely to click on the websites 
                         that appear at the top of the search results. Additionally, appearing at the top of 
@@ -32,4 +41,4 @@ const Position = () => {
     )                                  
 }
 
-export default Position;
+export default WebsiteVisibility;
