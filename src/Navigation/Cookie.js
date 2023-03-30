@@ -18,7 +18,7 @@ function Cookies() {
         <div className={styles.cookie}>
             <p>This website uses cookies to improve the user experience. Please accept cookies to ensure the best experience for you.</p>
             <div className={styles.buttons}>
-               <button className={`${styles.btn} ${styles.navBtn} ${styles.ContactBtn}`} onClick={handleAcceptCookies}>Accept Cookies</button>
+               <button className={`${styles.btn} ${styles.cookyBtn} `} onClick={handleAcceptCookies}>Accept Cookies</button>
                 <Link className={` ${styles.policy}`} href={'privacyPolicy'}>Privacy Policy</Link>
             </div>
           </div>
