@@ -21,6 +21,7 @@ export default function Home() {
         Digital marketing issues are the focus of the innovators at Altromedia." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
+        <meta name="google-site-verification" content="W-rtCF5w2J8bNo9N3f6zv3ZQgR8lwiN1w0QgnR9tWyQ" />
 
       </Head>
       <div className='all'>
