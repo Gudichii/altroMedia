@@ -9,14 +9,17 @@
 @import './cookie.module.scss';
 @import './modal.module.scss';
 
-
 @font-face {
     font-family: "Poppins";
-    src: url("../assets/fonts/Poppins-Regular.ttf");
+    src: url("../pages/static/fonts/Poppins-Regular.ttf");
   }
+// @font-face {
+//     font-family: "Poppins";
+//     src: url("../assets/fonts/Poppins-Regular.ttf");
+//   }
 @font-face {
     font-family: "PoppinsBold";
-    src: url("../assets/fonts/Poppins-Bold.ttf");
+    src: url("../pages/static/fonts/Poppins-Bold.ttf");
 }
 
 $black: #000000;
