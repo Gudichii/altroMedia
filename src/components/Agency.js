@@ -2,7 +2,8 @@
 import Image from 'next/image';
 import Oagenciji from '../assets/img/o-agenciji.png';
 import styles from '@/styles/Main.module.scss'
-import { Link } from 'react-scroll';
+import { Link as ScrollLink } from 'react-scroll';
+import Link from 'next/link';
 
 
 const oagenciji = () => {
@@ -17,9 +18,14 @@ const oagenciji = () => {
                     We aim to direct your digitial future with strategic apporach, 
                     and provide the key to unlock your maximum potential.
                     </p>
-                    <Link to={'contact'} smooth={true} duration={400} className={`${styles.btn} ${styles.navBtn} ${styles.ContactBtn}`}>
+                    <div className={styles.buttonLinks}>
+                    <ScrollLink to={'contact'} smooth={true} duration={400} className={`${styles.btn} ${styles.navBtn} ${styles.ContactBtn}`}>
                         Contact
+                    </ScrollLink>
+                    <Link className={`${styles.btn} ${styles.navBtn} ${styles.ContactBtn}`} href={'Team'}> 
+                        Team
                     </Link>
+                    </div>
                 </div>
                 <Image className={styles.agencyImage} src={Oagenciji} alt="A responsive image" />
             </div>

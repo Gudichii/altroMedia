@@ -4,7 +4,7 @@ import styles from '@/styles/Main.module.scss'
 
 const oagenciji = () => {
     return(
-        <section id='agency' className={`${styles.oagenciji} ${styles.agencySection} ${styles.container}`}>
+        <section className={`${styles.oagenciji} ${styles.agencySection} ${styles.container}`}>
             <div className={`${styles.contentBlock} ${styles.RankContentBlock}`}>
                 <Image className={styles.agencyImage} src={rankHigher} alt="Rank Higher" />
                 <div className={styles.content}>

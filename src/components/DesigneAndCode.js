@@ -5,7 +5,7 @@ import styles from '@/styles/Main.module.scss'
 
 const oagenciji = () => {
     return(
-        <section id='agency' className={`${styles.oagenciji} ${styles.agencySection} ${styles.container}`}>
+        <section className={`${styles.oagenciji} ${styles.agencySection} ${styles.container}`}>
             <div className={styles.contentBlock}>
                 <div className={styles.content}>
                         <span className={styles.span}>DESIGN + CODE</span>

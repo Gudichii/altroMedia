@@ -9,6 +9,7 @@
 }
 
 
+
 .oagenciji{
    height: auto;
     min-height: 60vh;
@@ -33,6 +34,10 @@
                 a{
                     color: #fff
                 }
+            }
+            .buttonLinks{
+                display: flex;
+                flex-direction: row;
             }
         }
     }
