@@ -18,7 +18,7 @@ const oagenciji = () => {
                     and provide the key to unlock your maximum potential.
                     </p>
                     <Link to={'contact'} smooth={true} duration={400} className={`${styles.btn} ${styles.navBtn} ${styles.ContactBtn}`}>
-                        Book a meeting
+                        Contact
                     </Link>
                 </div>
                 <Image className={styles.agencyImage} src={Oagenciji} alt="A responsive image" />

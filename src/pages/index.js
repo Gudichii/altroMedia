@@ -1,7 +1,10 @@
 import { Inter } from 'next/font/google';
 // import styles from '@/styles/Main.module.scss'
 import Head from 'next/head';
-import Hero from '@/components/Hero'
+import Hero from '@/components/Hero';
+import DesigneAndCode from '@/components/DesigneAndCode';
+import RankHigher from '@/components/RankHigher';
+import Deliver from '@/components/Deliver';
 import AboutSEO from '@/components/AboutSEO';
 import Services from '@/components/Services';
 import Agency from '@/components/Agency';
@@ -9,7 +12,8 @@ import How from '@/components/HowWeWork';
 import Contact from '@/Navigation/Contact';
 import Cookies from '@/Navigation/Cookie';
 
-const inter = Inter({ subsets: ['latin'] })
+
+const inter = Inter({ subsets: ['latin'] });
 
 export default function Home() {
   return (
@@ -30,6 +34,9 @@ export default function Home() {
         <Cookies />
         <Hero/>
         <AboutSEO/>
+        <DesigneAndCode />
+        <RankHigher />
+        <Deliver />
         <Services />
         <Agency />
         <How />

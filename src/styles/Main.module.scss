@@ -112,6 +112,13 @@ $background: #F5F4F4;
     }
   }
 
+.externImg{
+    @media (max-width: 960px){
+        width: 300px;
+        height: auto;
+    }
+}
+
 
 @include btn;
 @include Mobile;

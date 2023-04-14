@@ -1,3 +1,13 @@
+.titlesContent{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.agencyImage{
+    margin-bottom: 25px;
+}
+
 
 .oagenciji{
    height: auto;
@@ -64,6 +74,15 @@
                 height: 60%;
             }
         }}
+        
+}
+
+@media only screen and (max-width: 700px){
+    .oagenciji{
+    .RankContentBlock{
+        flex-direction:column;
+    }
+    }
 }
 
 @media only screen and (max-width: 500px){

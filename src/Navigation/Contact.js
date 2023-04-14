@@ -1,5 +1,4 @@
-import Image from 'next/image';
-import Wave from '../assets/img/wave.png';
+
 import styles from '@/styles/Main.module.scss';
 import Link from 'next/link';
 import { useState } from 'react';

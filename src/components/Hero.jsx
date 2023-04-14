@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import seorocket from '../assets/img/seorocket.webp';
+import altromedia from '../assets/img/altromedia.png';
 import styles from '@/styles/Main.module.scss';
 import { Link } from 'react-scroll';
 
@@ -21,7 +21,7 @@ const Hero = () =>{
             </div>
           </div>
           <div>
-            <Image className={styles.seorocket} src={seorocket} alt="A responsive image" />
+            <Image className={styles.seorocket} src={altromedia} alt="A responsive image" />
           </div>
         </div>
      </section>
