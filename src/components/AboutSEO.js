@@ -6,7 +6,7 @@ import styles from '@/styles/Main.module.scss';
 const AboutSEO = () =>{
     return(
         <section id='aboutSEO' className={styles.AboutSEO}>
-            <h2 className={styles.subtitle2}>You require a good web solution if:</h2>
+            <h2 className={styles.subtitle2}>You need a good web solution if:</h2>
             <div className={styles.contentBlock2}>
                 <Image className={styles.externImg} src={websolution} alt='You need batter web solution if:' />
                 <div className={`${styles.box} ${styles.corect}`}>

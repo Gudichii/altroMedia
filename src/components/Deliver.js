@@ -8,13 +8,11 @@ const oagenciji = () => {
             <div className={styles.contentBlock}>
                 <div className={styles.content}>
                     <span className={styles.span}>DELIVER</span>
-                    <h2 className={styles.title}>Tell your story visually</h2>
+                    <h2 className={styles.title}>Meet your “impossible” deadline</h2>
                     <p className={styles.paragraph}>
-                        Detailed design with a well-defined sequence of sections so 
-                        that your users easily find and convert what they're looking for. 
-                        The removal of 
-                        all elements on your page that may distract customers and the rapid loading 
-                        of basic animation and images.
+                        Find out how we’ve 
+                        launched sites in under two weeks and how quickly 
+                        we can turn your project around.
                     </p>
                 </div>
             <Image className={styles.agencyImage} src={deliver} alt="Deliver" />

@@ -9,13 +9,12 @@ const oagenciji = () => {
                 <Image className={styles.agencyImage} src={rankHigher} alt="Rank Higher" />
                 <div className={styles.content}>
                     <span className={styles.span}>RANK HIGHER</span>
-                    <h2 className={styles.title}>Tell your story visually</h2>
+                    <h2 className={styles.title}>Rank higher</h2>
                     <p className={styles.paragraph}>
-                        Detailed design with a well-defined sequence of sections so 
-                        that your users easily find and convert what they're looking for. 
-                        The removal of 
-                        all elements on your page that may distract customers and the rapid loading 
-                        of basic animation and images.
+                        You can have a wonderfully designed website, 
+                        but it will be useless if it does not match the optimization requirement 
+                        since users will be unable to access you. 
+                        Our mission statement is to develop a well-designed and optimized web solution.
                     </p>
                 </div>
             </div>

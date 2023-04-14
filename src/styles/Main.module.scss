@@ -43,7 +43,7 @@ $background: #F5F4F4;
     flex-direction: column;
     justify-content: center;
     margin-left: 10vw;
-    margin-right: 10vh;
+    margin-right: 10vw;
 }
 
 .title{
@@ -61,6 +61,7 @@ $background: #F5F4F4;
 .subtitle2{
     padding-top: 5vh;
     padding-bottom: 5vh;
+    
     @include title;
     text-align: center;
 }
