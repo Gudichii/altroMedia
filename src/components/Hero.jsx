@@ -11,7 +11,8 @@ const Hero = () =>{
           <div className={styles.contentBlock}>
             <h1 className={`${styles.title} ${styles.h1}`}>Believe in your <span className={styles.span}>digital future.</span></h1>
             <p className={styles.paragraph}>
-            Take care of your website. It's your most valuable digital asset.
+            Take care of your website. It's your most valuable digital asset. 
+            Make certain that it fulfils its function and that those looking for it find you.
             </p>
             <div className={styles.buttons}>
               <Link className={styles.btn} to="contact" smooth={true} duration={1000}>Contact us</Link>
