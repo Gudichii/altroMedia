@@ -42,6 +42,14 @@ export default function Home() {
         <How />
         <Contact />
       </div>
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-XLHMBBMQ49"></script>
+          <script async src="https://www.googletagmanager.com/gtag/js?id=G-XLHMBBMQ49"></script>
+          <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments)}
+            gtag('js', new Date());
+            gtag('config', 'G-XLHMBBMQ49');
+          </script>
     </div>
   )
 }
