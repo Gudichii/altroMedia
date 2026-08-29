@@ -1,0 +1,789 @@
+<!doctype html>
+<html lang="hr">
+<head>
+<meta charset="utf-8">
+<title>Hormozi — zadnja 3 book launcha</title>
+<style>
+  @page { size: 13.333in 7.5in; margin: 0; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #0d1014;
+    --bg2: #141920;
+    --ink: #eef2f6;
+    --dim: #8b97a6;
+    --dim2: #5f6b7a;
+    --line: #232b35;
+    --acc: #f0b429;
+    --acc2: #4ade80;
+    --red: #f87171;
+    --blue: #60a5fa;
+  }
+
+  html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    font-size: 15px;
+    line-height: 1.45;
+  }
+
+  .slide {
+    width: 13.333in; height: 7.5in;
+    padding: 0.62in 0.75in 0.55in;
+    position: relative;
+    background: var(--bg);
+    overflow: hidden;
+    break-after: page;
+    page-break-after: always;
+    display: flex; flex-direction: column;
+  }
+  .slide:last-child { break-after: auto; page-break-after: auto; }
+
+  /* --- header / footer --- */
+  .eyebrow {
+    font-size: 11px; letter-spacing: .16em; text-transform: uppercase;
+    color: var(--acc); font-weight: 700; margin-bottom: 10px;
+  }
+  h1 { font-size: 40px; line-height: 1.1; font-weight: 800; letter-spacing: -.02em; }
+  h2 { font-size: 31px; line-height: 1.15; font-weight: 800; letter-spacing: -.015em; margin-bottom: 4px; }
+  .sub { color: var(--dim); font-size: 15px; margin-top: 6px; margin-bottom: 20px; }
+  .pnum {
+    position: absolute; right: 0.75in; bottom: 0.34in;
+    font-size: 10px; color: var(--dim2); letter-spacing: .1em;
+  }
+  .tag {
+    position: absolute; left: 0.75in; bottom: 0.34in;
+    font-size: 10px; color: var(--dim2); letter-spacing: .1em; text-transform: uppercase;
+  }
+  .rule { height: 2px; background: var(--acc); width: 46px; margin: 14px 0 20px; }
+
+  /* --- cover --- */
+  .cover { justify-content: center; background: linear-gradient(150deg, #0d1014 0%, #141c26 100%); }
+  .cover h1 { font-size: 62px; max-width: 9.4in; }
+  .cover .lede { color: var(--dim); font-size: 19px; margin-top: 22px; max-width: 7.6in; }
+  .coverbar { display: flex; gap: 40px; margin-top: 46px; }
+  .coverbar div { border-left: 2px solid var(--acc); padding-left: 14px; }
+  .coverbar b { display: block; font-size: 22px; font-weight: 800; }
+  .coverbar span { font-size: 12px; color: var(--dim); letter-spacing: .04em; }
+
+  /* --- section divider --- */
+  .divider { justify-content: center; background: linear-gradient(120deg, #11161d 0%, #0d1014 70%); }
+  .divider .num { font-size: 110px; font-weight: 800; color: var(--line); line-height: .9; letter-spacing: -.04em; }
+  .divider h1 { margin-top: -18px; font-size: 52px; }
+  .divider .meta { margin-top: 20px; color: var(--acc); font-size: 16px; font-weight: 600; letter-spacing: .02em; }
+
+  /* --- tables --- */
+  table { width: 100%; border-collapse: collapse; font-size: 14px; }
+  th {
+    text-align: left; font-size: 10.5px; letter-spacing: .12em; text-transform: uppercase;
+    color: var(--dim2); font-weight: 700; padding: 0 12px 8px 0; border-bottom: 1px solid var(--line);
+  }
+  td { padding: 9px 12px 9px 0; border-bottom: 1px solid var(--line); vertical-align: top; }
+  td:first-child { font-weight: 700; }
+  tr:last-child td { border-bottom: none; }
+  .t-tight td, .t-tight th { padding-top: 10px; padding-bottom: 10px; font-size: 13.6px; }
+  .num-c { font-variant-numeric: tabular-nums; }
+
+  /* --- cards --- */
+  .grid { display: grid; gap: 14px; }
+  .g2 { grid-template-columns: 1fr 1fr; }
+  .g3 { grid-template-columns: repeat(3, 1fr); }
+  .g4 { grid-template-columns: repeat(4, 1fr); }
+  .card {
+    background: var(--bg2); border: 1px solid var(--line); border-radius: 8px;
+    padding: 16px 18px;
+  }
+  .card h3 { font-size: 15px; font-weight: 800; margin-bottom: 6px; }
+  .card p { font-size: 13px; color: var(--dim); line-height: 1.5; }
+  .card .k { font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--acc); font-weight: 700; margin-bottom: 8px; }
+
+  /* --- stat --- */
+  .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 22px; }
+  .stat { border-top: 3px solid var(--acc); padding-top: 14px; }
+  .stat b { display: block; font-size: 38px; font-weight: 800; letter-spacing: -.02em; line-height: 1; font-variant-numeric: tabular-nums; }
+  .stat span { display: block; font-size: 12px; color: var(--dim); margin-top: 9px; line-height: 1.35; }
+  .stat.alt { border-top-color: var(--acc2); }
+  .stat.warn { border-top-color: var(--red); }
+
+  /* --- ladder --- */
+  .ladder { display: flex; flex-direction: column; gap: 9px; }
+  .rung {
+    display: grid; grid-template-columns: 1.62in 1fr; gap: 18px; align-items: start;
+    background: var(--bg2); border-left: 3px solid var(--line); border-radius: 0 7px 7px 0;
+    padding: 12px 18px;
+  }
+  .rung .price { font-size: 19px; font-weight: 800; font-variant-numeric: tabular-nums; letter-spacing: -.01em; }
+  .rung .lvl { font-size: 10px; color: var(--dim2); letter-spacing: .1em; text-transform: uppercase; margin-bottom: 3px; }
+  .rung h4 { font-size: 14.5px; font-weight: 700; margin-bottom: 3px; }
+  .rung p { font-size: 12.6px; color: var(--dim); line-height: 1.45; }
+  .rung.hero { border-left-color: var(--acc); background: #1b1a12; }
+  .rung.hero .price { color: var(--acc); }
+  .rung.free { border-left-color: var(--acc2); }
+  .rung.free .price { color: var(--acc2); }
+
+  /* --- lists --- */
+  ol.big, ul.big { list-style: none; display: flex; flex-direction: column; flex: 1; }
+  ol.big li, ul.big li {
+    padding: 8px 0 8px 34px; position: relative; font-size: 14.6px;
+    border-bottom: 1px solid var(--line);
+    flex: 1;
+  }
+  ol.big li:last-child, ul.big li:last-child { border-bottom: none; }
+  ol.big { counter-reset: n; }
+  ol.big li::before {
+    counter-increment: n; content: counter(n);
+    position: absolute; left: 0; top: 14px;
+    width: 21px; height: 21px; border-radius: 5px;
+    background: var(--acc); color: #0d1014;
+    font-size: 11.5px; font-weight: 800; text-align: center; line-height: 21px;
+  }
+  ul.big.no li::before {
+    content: "\00d7"; position: absolute; left: 0; top: 14px;
+    width: 21px; height: 21px; border-radius: 5px;
+    background: var(--red); color: #0d1014;
+    font-size: 13px; font-weight: 800; text-align: center; line-height: 21px;
+  }
+  li b { color: var(--ink); }
+  li span { color: var(--dim); }
+
+  /* --- callout --- */
+  .callout {
+    background: #1b1a12; border-left: 3px solid var(--acc);
+    padding: 18px 22px; border-radius: 0 7px 7px 0; margin-top: auto;
+  }
+  .callout.red { background: #1d1416; border-left-color: var(--red); }
+  .callout p { font-size: 14px; line-height: 1.5; }
+  .callout .lbl { font-size: 10.5px; letter-spacing: .12em; text-transform: uppercase; color: var(--acc); font-weight: 700; margin-bottom: 6px; }
+  .callout.red .lbl { color: var(--red); }
+
+  .quote { font-size: 17px; line-height: 1.55; font-style: italic; color: var(--ink); }
+
+  /* --- phases --- */
+  .phases { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; margin-top: 4px; }
+  .phase { padding: 0 18px 0 0; position: relative; display: flex; flex-direction: column; }
+  .phase:not(:last-child)::after {
+    content: ""; position: absolute; right: 9px; top: 6px; bottom: 0; width: 1px; background: var(--line);
+  }
+  .phase .ph { font-size: 10.5px; letter-spacing: .12em; text-transform: uppercase; color: var(--acc); font-weight: 700; }
+  .phase h4 { font-size: 16px; font-weight: 800; margin: 6px 0 9px; }
+  .phase ul { list-style: none; }
+  .phase li {
+    font-size: 12.8px; color: var(--dim); padding: 6px 0 6px 12px; position: relative; line-height: 1.4;
+  }
+  .phase li::before { content: ""; position: absolute; left: 0; top: 12px; width: 4px; height: 4px; border-radius: 50%; background: var(--dim2); }
+
+  .flow { display: flex; align-items: center; gap: 10px; margin: 18px 0 4px; flex-wrap: wrap; }
+  .flow .step {
+    background: var(--bg2); border: 1px solid var(--line); border-radius: 6px;
+    padding: 9px 14px; font-size: 13px; font-weight: 700; font-variant-numeric: tabular-nums;
+  }
+  .flow .step.hi { border-color: var(--acc); color: var(--acc); }
+  .flow .arr { color: var(--dim2); font-size: 15px; }
+
+  .hi-acc { color: var(--acc); }
+  .hi-red { color: var(--red); }
+  .hi-grn { color: var(--acc2); }
+  .mono { font-variant-numeric: tabular-nums; }
+  .spacer { flex: 1; }
+</style>
+</head>
+<body>
+
+<!-- 1 COVER -->
+<section class="slide cover">
+  <div class="eyebrow">Interni research dosje · kolovoz 2026.</div>
+  <h1>Alex Hormozi<br>zadnja 3 book launcha</h1>
+  <p class="lede">Kompletna anatomija: timeline, offer struktura, funnel, affiliate mehanika,
+  brojke — i što je od toga stvarno primjenjivo.</p>
+  <div class="coverbar">
+    <div><b>$100M Offers</b><span>2021 · bez eventa</span></div>
+    <div><b>$100M Leads</b><span>2023 · webinar + affiliate</span></div>
+    <div><b>$100M Money Models</b><span>2025 · Guinness rekord</span></div>
+  </div>
+</section>
+
+<!-- 2 OVERVIEW -->
+<section class="slide">
+  <div class="eyebrow">Pregled</div>
+  <h2>Tri launcha, tri različite igre</h2>
+  <div class="rule"></div>
+  <table class="t-tight">
+    <tr><th style="width:1.9in">Knjiga</th><th style="width:1.15in">Datum</th><th style="width:2.5in">Format launcha</th><th>Rezultat (self-reported)</th></tr>
+    <tr><td>$100M Offers</td><td class="mono">13. 7. 2021.</td><td>Bez eventa — organski, content-first</td><td>1.000.000+ primjeraka kumulativno</td></tr>
+    <tr><td>$100M Leads</td><td class="mono">19. 8. 2023.</td><td>Besplatni live webinar (~90 min) + affiliate armija</td><td>200k+ registracija · 800.000+ primjeraka</td></tr>
+    <tr><td>$100M Money Models</td><td class="mono">16. 8. 2025.</td><td>3-dnevni livestream maraton (18h+) + 5-razinska ljestvica</td><td>~2,9 mil. u 24h · ~$81–87M day one</td></tr>
+  </table>
+  <div class="callout">
+    <div class="lbl">Jedna rečenica po launchu</div>
+    <p><b>2021 = depozit</b> (daje sve besplatno, ne traži ništa) &nbsp;·&nbsp;
+       <b>2023 = povlačenje pažnje</b> (event umjesto objave) &nbsp;·&nbsp;
+       <b>2025 = naplata</b> (monetizacijska ljestvica na akumuliranoj pažnji)</p>
+  </div>
+  <div class="tag">Pregled</div><div class="pnum">02</div>
+</section>
+
+<!-- 3 NUMBERS WARNING -->
+<section class="slide">
+  <div class="eyebrow">Prije svega</div>
+  <h2>Kako čitati brojke u ovom dosjeu</h2>
+  <div class="rule"></div>
+  <div class="grid g3" style="margin-bottom:20px">
+    <div class="card">
+      <div class="k">Izvor</div>
+      <h3>Sve je self-reported</h3>
+      <p>Hormozijev launch dashboard i njegovi postovi. Nije revidirano od treće strane — osim Guinnessovog rekorda, koji jest verificiran.</p>
+    </div>
+    <div class="card">
+      <div class="k">Raspon</div>
+      <h3>$81M / $87M / "$100M+"</h3>
+      <p>Isti launch, tri brojke. Razlika je mjeri li se 24h, weekend ili cijeli launch tjedan. Isto za primjerke: 2,7M / 2,9M / 3,1M.</p>
+    </div>
+    <div class="card">
+      <div class="k">Jedinica</div>
+      <h3>"Copies" ≠ kupci</h3>
+      <p>Rekord se mjeri u primjercima, ne u ljudima. Jedan kupac bundlea = 200 "prodanih" primjeraka. Detalji na slajdu 11.</p>
+    </div>
+  </div>
+  <div class="callout">
+    <div class="lbl">Zaključak</div>
+    <p>Brojka je marketinški artefakt dizajniran da bude rekord. <b>Mehanika koja ju je proizvela je ono što je vrijedno</b> — ne brojka sama. U cijelom dosjeu je naveden raspon umjesto jedne brojke gdje se izvori razilaze.</p>
+  </div>
+  <div class="tag">Metodologija</div><div class="pnum">03</div>
+</section>
+
+<!-- 4 DIVIDER 1 -->
+<section class="slide divider">
+  <div class="num">01</div>
+  <h1>$100M Offers</h1>
+  <div class="meta">13. srpnja 2021. · Acquisition.com (self-published)</div>
+  <div class="pnum">04</div>
+</section>
+
+<!-- 5 OFFERS CONTEXT -->
+<section class="slide">
+  <div class="eyebrow">Launch #1 · Kontekst</div>
+  <h2>U 2021. Hormozi nije bio Hormozi</h2>
+  <div class="rule"></div>
+  <div class="stats">
+    <div class="stat"><b>2.000</b><span>YouTube subscribera u trenutku pisanja knjige</span></div>
+    <div class="stat"><b>$0</b><span>prodaje online — bez tečajeva, programa, mastermindova</span></div>
+    <div class="stat"><b>0</b><span>live eventa, webinara ili affiliate programa</span></div>
+    <div class="stat"><b>~$10</b><span>cijena knjige — namjerno na razini troška tiska</span></div>
+  </div>
+  <div class="grid g2">
+    <div class="card">
+      <div class="k">Što je knjiga zapravo bila</div>
+      <h3>Lead magnet za identitet, ne proizvod</h3>
+      <p>Cilj nije bio zaraditi na knjizi nego <b>postati referenca za temu "offer"</b>. Jedna tema, do kraja — nije "sve o biznisu".</p>
+    </div>
+    <div class="card">
+      <div class="k">Gdje je bio novac</div>
+      <h3>Downstream, ne na knjizi</h3>
+      <p>Acquisition.com dealflow (osnivači sami traže investiciju), brand equity za sve kasnije launcheve, email lista preko besplatne bonus stranice.</p>
+    </div>
+  </div>
+  <div class="callout" style="margin-top:18px">
+    <div class="lbl">Njegova logika</div>
+    <p class="quote">"Ako knjigu naplatiš premium, filtriraš ljude koje želiš. Ako ju daš po trošku — kupuješ pažnju."</p>
+  </div>
+  <div class="tag">$100M Offers · 2021</div><div class="pnum">05</div>
+</section>
+
+<!-- 6 OFFERS STRUCTURE -->
+<section class="slide">
+  <div class="eyebrow">Launch #1 · Struktura i pouka</div>
+  <h2>Ovo nije bio launch — bio je depozit</h2>
+  <div class="rule"></div>
+  <table class="t-tight" style="margin-bottom:20px">
+    <tr><th style="width:1.7in">Element</th><th>Kako je izgledalo</th></tr>
+    <tr><td>Kanal</td><td>Amazon (KDP) + vlastiti podcast/YouTube. Bez plaćene distribucije.</td></tr>
+    <tr><td>Bonusi</td><td>Besplatni digitalni materijali — <b>dostupni svima, ne samo kupcima</b></td></tr>
+    <tr><td>Poziv na akciju</td><td>"Kupi knjigu, ostavi review" — reviewi kao društveni dokaz, ne kao gate za bonus</td></tr>
+    <tr><td>Ad spend</td><td>Zanemariv u odnosu na kasnije launcheve</td></tr>
+    <tr><td>Rezultat</td><td>Amazon bestseller (Direct Marketing / Advertising / Sales) · 1M+ primjeraka kumulativno</td></tr>
+  </table>
+  <div class="grid g4">
+    <div class="card"><h3>1. Cijena po trošku</h3><p>Strateška odluka, ne skromnost. Prva knjiga služi za pozicioniranje, ne profit.</p></div>
+    <div class="card"><h3>2. Bonusi svima</h3><p>Ne samo kupcima. Manje frictiona, šira lista.</p></div>
+    <div class="card"><h3>3. Jedna tema</h3><p>Cijela knjiga o jednoj stvari. Autoritet se gradi dubinom.</p></div>
+    <div class="card"><h3>4. Nema shortcuta</h3><p>Bez ove 4-godišnje faze, launch iz 2025. ne postoji.</p></div>
+  </div>
+  <div class="callout">
+    <div class="lbl">Trošak ove faze</div>
+    <p>Četiri godine i praktički nula dolara. <b>To je jedini dio launcha koji se ne može kupiti</b> — sve ostalo iz 2023. i 2025. je izvedba na već izgrađenom povjerenju.</p>
+  </div>
+  <div class="tag">$100M Offers · 2021</div><div class="pnum">06</div>
+</section>
+
+<!-- 7 DIVIDER 2 -->
+<section class="slide divider">
+  <div class="num">02</div>
+  <h1>$100M Leads</h1>
+  <div class="meta">Live event 19. 8. 2023. · knjiga izlazi 20. 8. 2023.</div>
+  <div class="pnum">07</div>
+</section>
+
+<!-- 8 LEADS TIMELINE -->
+<section class="slide">
+  <div class="eyebrow">Launch #2 · Timeline</div>
+  <h2>Prvi launch koji je bio event, a ne objava</h2>
+  <div class="rule"></div>
+  <table class="t-tight" style="margin-bottom:18px">
+    <tr><th style="width:1.6in">Kada</th><th>Što</th></tr>
+    <tr><td class="mono">T-6 tjedana</td><td>Javna najava na svim kanalima s točnim datumom i satom + eksplicitan poziv da pozoveš druge</td></tr>
+    <tr><td class="mono">T-6 → T-0</td><td>Registracije na <span class="mono">acquisition.com/leads</span>, affiliate regrutacija, teaseri bonusa</td></tr>
+    <tr><td class="mono">Odmah po opt-inu</td><td><b>Drugi email</b> sadrži osobni share/affiliate link — automatski, bez prijave</td></tr>
+    <tr><td class="mono">19. 8. 2023.</td><td>Live event ~90 min: core sadržaj + objava bonusa uživo</td></tr>
+    <tr><td class="mono">20. 8. 2023.</td><td>Knjiga službeno izlazi — <b>dan NAKON eventa</b></td></tr>
+  </table>
+  <div class="callout">
+    <div class="lbl">Detalj koji se lako previdi</div>
+    <p>Event je <b>dan prije</b> izlaska knjige. Sav promet se koncentrira u jedan prozor, a proizvod izlazi u trenutku maksimalnog momentuma — ne prije njega.</p>
+  </div>
+  <div class="tag">$100M Leads · 2023</div><div class="pnum">08</div>
+</section>
+
+<!-- 9 LEADS OFFER -->
+<section class="slide">
+  <div class="eyebrow">Launch #2 · Offer i bonusi</div>
+  <h2>Nula frictiona na ulazu</h2>
+  <div class="rule"></div>
+  <div class="flow">
+    <div class="step hi">$0 — registracija za event</div><span class="arr">→</span>
+    <div class="step">Live event 90 min</div><span class="arr">→</span>
+    <div class="step">Knjiga ~$19,99</div><span class="arr">→</span>
+    <div class="step" style="color:var(--dim2)">bez upsell ljestvice</div>
+  </div>
+  <p class="sub" style="margin-top:14px">Bonusi objavljeni uživo na eventu, svi na <span class="mono">acquisition.com/leads-gifts</span>:</p>
+  <div class="grid g2">
+    <div class="card">
+      <div class="k">Bonus 01</div>
+      <h3>278+ stranica "lost chapters"</h3>
+      <p>Bilješke skupljane 4 godine kroz pisanje prve dvije knjige — crteži, iteracije, privatni video zapisi kako su frameworci nastajali.</p>
+    </div>
+    <div class="card">
+      <div class="k">Bonus 02</div>
+      <h3>Cijeli audiobook — besplatno</h3>
+      <p>Svako poglavlje objavljeno kao zasebna epizoda podcasta <i>The Game</i>. Knjiga je istovremeno i lead magnet za podcast.</p>
+    </div>
+    <div class="card">
+      <div class="k">Bonus 03</div>
+      <h3>Replay eventa (~90 min)</h3>
+      <p>Za one koji nisu stigli uživo — bez kazne, bez "samo za one koji su bili".</p>
+    </div>
+    <div class="card">
+      <div class="k">Bonus 04</div>
+      <h3>Darivanje fizičkih primjeraka</h3>
+      <p>Mogućnost slanja knjige prijateljima i kolegama. Prototip mehanike koja će 2025. srušiti rekord.</p>
+    </div>
+  </div>
+  <div class="callout">
+    <div class="lbl">Obrazac</div>
+    <p>Sve što konkurencija naplaćuje — knjigu, audiobook, frameworke, snimku — <b>on daje besplatno</b>. Naplaćuje jedino pristup sebi. Zato je bonus stack uvijek veći od proizvoda.</p>
+  </div>
+  <div class="tag">$100M Leads · 2023</div><div class="pnum">09</div>
+</section>
+
+<!-- 10 LEADS AFFILIATE -->
+<section class="slide">
+  <div class="eyebrow">Launch #2 · Glavna inovacija</div>
+  <h2>Affiliate armija plaćena sadržajem, ne provizijom</h2>
+  <div class="rule"></div>
+  <table class="t-tight" style="margin-bottom:18px">
+    <tr><th style="width:1.9in">Element</th><th>Detalj</th></tr>
+    <tr><td>Prijava</td><td>Trivijalna — link stiže <b>automatski u drugom emailu</b> nakon opt-ina. Nema aplikacije, nema odobravanja.</td></tr>
+    <tr><td>Što se prati</td><td><b>Registracije za event</b> — ne prodaje knjiga</td></tr>
+    <tr><td>Swipe materijal</td><td><i>"The Acquisition.com Affiliate Black Book"</i> — činjenice o eventu, gotovi tekstovi, upute za pisanje, razlozi za dolazak</td></tr>
+    <tr><td>Nagrada (mala)</td><td>10 registracija → <b>2 neobjavljena poglavlja knjige</b></td></tr>
+    <tr><td>Nagrada (velika)</td><td>Leaderboard natjecanje s većim nagradama za top affiliate</td></tr>
+    <tr><td>Kompenzacija</td><td><b class="hi-red">Bez novčane provizije</b> — plaća se pristupom i sadržajem</td></tr>
+  </table>
+  <div class="callout">
+    <div class="lbl">Zašto ovo radi</div>
+    <p>Affiliate <b>ne prodaje ništa</b> — samo poziva na besplatan event. Nema frictiona "prodajem ti nešto svojoj publici", konverzija je trivijalna, pa je i affiliate motiviran. Rezultat: <b class="hi-acc">200.000+ registracija</b>.</p>
+  </div>
+  <div class="tag">$100M Leads · 2023</div><div class="pnum">10</div>
+</section>
+
+<!-- 11 LEADS SWIPE -->
+<section class="slide">
+  <div class="eyebrow">Launch #2 · Swipe</div>
+  <h2>Najava od 5 redaka koja je pokrenula sve</h2>
+  <div class="rule"></div>
+  <div class="card" style="padding:26px 30px; margin-bottom:22px">
+    <p class="quote">"I release my new book $100M Leads in 6 weeks. Saturday August 19th 9am PT/12pm ET.<br>
+    This is your official invitation. <b class="hi-acc">Invite ya friends.</b><br>
+    I'll announce the book live with some (insane) exclusive bonuses.<br>
+    I've been working on these bonuses since before $100M Offers (4+ years). They're goooood."</p>
+  </div>
+  <div class="grid g3">
+    <div class="card"><div class="k">Element 1–2</div><h3>Datum + poziv</h3><p>Točan dan, sat i vremenska zona. Nikad "uskoro" ni "dostupno od danas".</p></div>
+    <div class="card"><div class="k">Element 3</div><h3>Poziv da pozoveš druge</h3><p>Eksplicitno traži share. Ljudi ne dijele ako ih ne zamoliš.</p></div>
+    <div class="card"><div class="k">Element 4–5</div><h3>Teaser + dokaz truda</h3><p>Ne otkriva bonuse, ali kaže "4+ godine". Priča o trudu opravdava percipiranu vrijednost.</p></div>
+  </div>
+  <div class="tag">$100M Leads · 2023</div><div class="pnum">11</div>
+</section>
+
+<!-- 12 DIVIDER 3 -->
+<section class="slide divider">
+  <div class="num">03</div>
+  <h1>$100M Money Models</h1>
+  <div class="meta">16. kolovoza 2025. · Guinnessov rekord za najbrže prodavanu non-fiction knjigu</div>
+  <div class="pnum">12</div>
+</section>
+
+<!-- 13 MM RESULTS -->
+<section class="slide">
+  <div class="eyebrow">Launch #3 · Rezultati</div>
+  <h2>Brojke koje su srušile rekord</h2>
+  <div class="rule"></div>
+  <div class="stats">
+    <div class="stat"><b>~2,9M</b><span>primjeraka u 24 sata<br><span style="color:var(--dim2)">prethodni rekord: <i>Spare</i> — 1,43M</span></span></div>
+    <div class="stat"><b>$81–87M</b><span>prihod day one<br><span style="color:var(--dim2)">raspon ovisi o prozoru mjerenja</span></span></div>
+    <div class="stat alt"><b>3,1M</b><span>primjeraka u launch tjednu<br><span style="color:var(--dim2)">$82M+ prema javnom dashboardu</span></span></div>
+    <div class="stat alt"><b>100k+</b><span>live gledatelja<br><span style="color:var(--dim2)">peak na YouTube livestreamu</span></span></div>
+  </div>
+  <div class="grid g3">
+    <div class="card"><div class="k">Pre-launch</div><h3>$4M+ ad spenda</h3><p>Mjesecima prije launcha. Stotine testiranih iteracija — poruka, vizual, offer.</p></div>
+    <div class="card"><div class="k">Format</div><h3>18h+ livea kroz 3 dana</h3><p>7h18m glavni stream · 6h41m encore · 4,5h+ final push.</p></div>
+    <div class="card"><div class="k">Offer</div><h3>5 razina, $0 → $100k</h3><p>Svaka razina publike ima gdje sletjeti. Detalji na sljedećem slajdu.</p></div>
+  </div>
+  <div class="callout red">
+    <div class="lbl">Prije nego uzmeš ove brojke kao benchmark</div>
+    <p>Rekord je stvaran i verificiran — ali mjeri <b>primjerke, ne kupce</b>. Kako je 14.500 ljudi proizvelo 2,9 milijuna primjeraka: sljedeći slajd.</p>
+  </div>
+  <div class="tag">$100M Money Models · 2025</div><div class="pnum">13</div>
+</section>
+
+<!-- 14 MM CRITIQUE -->
+<section class="slide">
+  <div class="eyebrow">Launch #3 · Kritički pogled</div>
+  <h2>2,9 milijuna primjeraka ≠ 2,9 milijuna kupaca</h2>
+  <div class="rule"></div>
+  <div class="flow" style="margin-bottom:22px">
+    <div class="step">~14.500 kupaca bundlea</div><span class="arr">×</span>
+    <div class="step">200 knjiga po kupcu</div><span class="arr">=</span>
+    <div class="step hi">~2.900.000 "prodanih" primjeraka</div>
+  </div>
+  <div class="grid g3" style="margin-bottom:20px">
+    <div class="card"><div class="k">Nije lažno</div><h3>Knjige su plaćene</h3><p>Sve su stvarno kupljene i tiskane/dodijeljene. Guinness je verificirao rekord po svojim pravilima.</p></div>
+    <div class="card"><div class="k">Ali</div><h3>Čitatelja je daleko manje</h3><p>199 od 200 primjeraka po kupcu odlazi kroz redemption kodove — dio nikad ne bude preuzet.</p></div>
+    <div class="card"><div class="k">I</div><h3>Kupaca je ~15.000</h3><p>Red veličine tisuće, ne milijuni. Kritičari tvrde da su kupovali zbog bonus stacka, ne zbog knjige.</p></div>
+  </div>
+  <div class="callout red">
+    <div class="lbl">Što ovo znači za primjenu</div>
+    <p>Rekord je bio <b>dizajniran kao rekord</b> — mehanika bundlea postoji upravo zato da brojka eksplodira. Ne kopiraj brojku kao benchmark. Kopiraj mehaniku koja ju je proizvela.</p>
+  </div>
+  <div class="tag">$100M Money Models · 2025</div><div class="pnum">14</div>
+</section>
+
+<!-- 15 MM OFFER STACK -->
+<section class="slide">
+  <div class="eyebrow">Launch #3 · Srž launcha</div>
+  <h2>Offer stack — pet razina</h2>
+  <div class="rule" style="margin-bottom:16px"></div>
+  <div class="ladder">
+    <div class="rung free">
+      <div><div class="lvl">Razina 0</div><div class="price">$0</div></div>
+      <div><h4>Registracija + kompletan bonus stack — svima, bez kupnje</h4>
+      <p>Nitko iz publike se ne osjeća isključeno. Rješava "zašto bih gledao ako ne mogu priuštiti $6k".</p></div>
+    </div>
+    <div class="rung">
+      <div><div class="lvl">Razina 1</div><div class="price">$29,99</div></div>
+      <div><h4>Knjiga + poštarina</h4><p>Standardni ulaz. Fizička knjiga.</p></div>
+    </div>
+    <div class="rung hero">
+      <div><div class="lvl">Razina 2 · glavni offer</div><div class="price">$5.998</div></div>
+      <div><h4>"Doniraj 200 knjiga" — offer koji je srušio rekord</h4>
+      <p>1 hardback za sebe + <b>199 redemption kodova</b> + 12 fizičkih ACQ playbooka + live workshop + doživotni pristup custom AI-u. Navodna vrijednost bonusa: $135.000+</p></div>
+    </div>
+    <div class="rung">
+      <div><div class="lvl">Razina 3</div><div class="price">800 knjiga</div></div>
+      <div><h4>One-time upsell odmah nakon kupnje 200-paketa</h4><p>Visokovolumni upsell za veće biznise.</p></div>
+    </div>
+    <div class="rung">
+      <div><div class="lvl">Razina 4</div><div class="price">$18.000</div></div>
+      <div><h4>ACQ Scale Advisory — $3.000/mj × 6 mjeseci</h4><p>Privatna Skool zajednica s Alexom i advisory timom + šest live virtualnih intenziva.</p></div>
+    </div>
+    <div class="rung">
+      <div><div class="lvl">Razina 5 · nije javno oglašavan</div><div class="price">~$100.000</div></div>
+      <div><h4>"Secret tier"</h4><p>Prema više izvora: 4.000 knjiga + high-touch podrška.</p></div>
+    </div>
+  </div>
+  <div class="tag">$100M Money Models · 2025</div><div class="pnum">15</div>
+</section>
+
+<!-- 16 MM DONATE MECHANIC -->
+<section class="slide">
+  <div class="eyebrow">Launch #3 · Najvažnija mehanika</div>
+  <h2>Zašto "doniraj" pobjeđuje "kupi"</h2>
+  <div class="rule"></div>
+  <div class="grid g2" style="margin-bottom:20px">
+    <div class="card" style="border-color:#3a3222">
+      <div class="k">Reframe</div>
+      <h3>Kupac ne kupuje zalihu — kupuje status</h3>
+      <p>CTA nije "kupi 200 knjiga" nego <b>"doniraj 200 knjiga"</b>. Ista transakcija, potpuno drugi identitet kupca. Nitko ne želi kutiju knjiga u garaži; svatko želi biti onaj koji daje.</p>
+    </div>
+    <div class="card" style="border-color:#3a3222">
+      <div class="k">Flywheel</div>
+      <h3>Kupac postaje distributer</h3>
+      <p>199 kodova nemaju smisla dok ih ne podijeliš. Kupac ih objavljuje na <b>svojim</b> kanalima ("imam 200 primjeraka, javi se") — i time <b>skuplja leadove za sebe</b> dok promovira tuđi launch.</p>
+    </div>
+  </div>
+  <div class="flow">
+    <div class="step">1 kupac plati $5.998</div><span class="arr">→</span>
+    <div class="step">dobije 199 kodova</div><span class="arr">→</span>
+    <div class="step hi">199 novih dodirnih točaka</div><span class="arr">→</span>
+    <div class="step">novi kupci</div>
+  </div>
+  <div class="callout" style="margin-top:20px">
+    <div class="lbl">Trošak implementacije</div>
+    <p><b>Nula.</b> To je promjena jedne riječi u copyju. Najjeftinija promjena s najvećim efektom u cijelom launchu.</p>
+  </div>
+  <div class="tag">$100M Money Models · 2025</div><div class="pnum">16</div>
+</section>
+
+<!-- 17 MM FUNNEL -->
+<section class="slide">
+  <div class="eyebrow">Launch #3 · Funnel</div>
+  <h2>Četiri faze</h2>
+  <div class="rule"></div>
+  <div class="phases">
+    <div class="phase">
+      <div class="ph">Faza 1 · mjeseci</div>
+      <h4>Pre-launch</h4>
+      <ul>
+        <li>$4M+ u oglasima</li>
+        <li>Stotine testiranih iteracija poruke, vizuala i offera</li>
+        <li>Organski sadržaj na svim platformama</li>
+        <li>Pre-prodaja knjige kroz one-time offer u funnelu</li>
+      </ul>
+    </div>
+    <div class="phase">
+      <div class="ph">Faza 2</div>
+      <h4>Registracija</h4>
+      <ul>
+        <li>Landing natrpan social proofom i screenshotovima</li>
+        <li>Iscrpan breakdown "što je unutar 12 playbooka"</li>
+        <li><b>Fizički bonusi</b> — tiskani playbooci imaju "thud factor"</li>
+        <li>~6 pre-registracijskih emailova</li>
+        <li><b>Mystery hook</b> — ne otkriva sve, razlog da dođeš uživo</li>
+      </ul>
+    </div>
+    <div class="phase">
+      <div class="ph">Faza 3 · dan launcha</div>
+      <h4>Bombardiranje</h4>
+      <ul>
+        <li><b>5+ emailova u jednom danu</b></li>
+        <li>SMS push s video porukama i linkovima za ulazak</li>
+        <li>Fizička pošta (direct mail) — da, u 2025.</li>
+        <li>Namjerna brutalna frekvencija; unsubscribe je prihvaćen trošak</li>
+      </ul>
+    </div>
+    <div class="phase">
+      <div class="ph">Faza 4</div>
+      <h4>Live konverzija</h4>
+      <ul>
+        <li>Offer se otvara tijekom streama, prozor se zatvara</li>
+        <li>Automatski one-time upsellovi u checkoutu</li>
+        <li><b>Live scoreboard</b> s prodajom u realnom vremenu</li>
+        <li>Urgentnost bez lažnog countdowna</li>
+      </ul>
+    </div>
+  </div>
+  <div class="callout" style="margin-top:auto">
+    <div class="lbl">Struktura sadržaja</div>
+    <p>Livestream je rađen po <b>"One to Many"</b> frameworku Jasona Fladliena. Poanta: sadržaj <i>jest</i> prodaja — sedam sati stvarne edukacije u kojoj je offer prirodan sljedeći korak, a ne pitch na kraju.</p>
+  </div>
+  <div class="tag">$100M Money Models · 2025</div><div class="pnum">17</div>
+</section>
+
+<!-- 18 MM AFFILIATE -->
+<section class="slide">
+  <div class="eyebrow">Launch #3 · Affiliate</div>
+  <h2>Gamificiran leaderboard umjesto provizije</h2>
+  <div class="rule"></div>
+  <div class="grid g2" style="margin-bottom:18px">
+    <div class="card">
+      <div class="k">Nagrade</div>
+      <h3>Iskustva i sadržaj, ne novac</h3>
+      <p><b>10 preporuka</b> → bonus audiobook <i>70 1-Minute Profit Tactics</i><br>
+      <b>Top 10</b> → privatni fireside chat s Hormozijem<br>
+      <b>Najbolji</b> → VIP iskustva<br><br>
+      Hormozi zadržava prihod, plaća pristupom.</p>
+    </div>
+    <div class="card">
+      <div class="k">Status loop</div>
+      <h3>Javni leaderboard je sam po sebi sadržaj</h3>
+      <p>Affiliate objavljuje svoj rang ("trenutno sam #16") jer je to dokaz da njegov lead gen radi — javno. Taj post donosi nove registracije, koje ga guraju gore, što donosi novi post.</p>
+    </div>
+  </div>
+  <div class="callout">
+    <div class="lbl">Plus organski sloj</div>
+    <p>Svaki kupac 200-paketa <b>automatski postaje promotor</b> — mora podijeliti svojih 199 kodova da bi imali smisla. To je affiliate program koji se ne mora regrutirati.</p>
+  </div>
+  <div class="tag">$100M Money Models · 2025</div><div class="pnum">18</div>
+</section>
+
+<!-- 19 WHY IT WORKED -->
+<section class="slide">
+  <div class="eyebrow">Launch #3 · Anatomija</div>
+  <h2>Sedam razloga zašto je funkcioniralo</h2>
+  <div class="rule"></div>
+  <ol class="big">
+    <li><b>Ponuda nije bila knjiga nego status i alat.</b> <span>Knjiga je bila nosač, ne proizvod.</span></li>
+    <li><b>Reframe kupnje u donaciju</b> <span>— uklonio otpor prema kupnji 200 komada.</span></li>
+    <li><b>Kupac postaje distributer</b> <span>— 199 kodova = 199 novih dodirnih točaka po kupcu.</span></li>
+    <li><b>Besplatni stack za sve</b> <span>— spriječio alijenaciju 99% publike koja ne troši $6k.</span></li>
+    <li><b>Fizički bonusi</b> <span>— riješili percepciju "još jedan digitalni tečaj".</span></li>
+    <li><b>Rekord kao sadržaj</b> <span>— scoreboard pretvara transakciju u sportski događaj koji se gleda.</span></li>
+    <li><b>Četiri godine besplatnog outputa</b> <span>— to je bio stvarni proizvod. Ovo je bila naplata.</span></li>
+  </ol>
+  <div class="tag">$100M Money Models · 2025</div><div class="pnum">19</div>
+</section>
+
+<!-- 20 DIVIDER 4 -->
+<section class="slide divider">
+  <div class="num">04</div>
+  <h1>Evolucija i primjena</h1>
+  <div class="meta">Što se mijenjalo · što ukrasti · što ne kopirati</div>
+  <div class="pnum">20</div>
+</section>
+
+<!-- 21 EVOLUTION TABLE -->
+<section class="slide">
+  <div class="eyebrow">Evolucija</div>
+  <h2>Isti principi, 20× intenzitet</h2>
+  <div class="rule"></div>
+  <table class="t-tight" style="margin-bottom:16px">
+    <tr><th style="width:1.9in">Element</th><th style="width:2.4in">Offers · 2021</th><th style="width:2.9in">Leads · 2023</th><th>Money Models · 2025</th></tr>
+    <tr><td>Format</td><td>Bez eventa</td><td>1 webinar (~90 min)</td><td>3-dnevni maraton (18h+)</td></tr>
+    <tr><td>Glavni CTA</td><td>"Kupi knjigu"</td><td>"Registriraj se besplatno"</td><td><b class="hi-acc">"Doniraj 200 knjiga"</b></td></tr>
+    <tr><td>Cijena ulaza</td><td class="mono">~$10–20</td><td class="mono">$0 event</td><td class="mono">$0 event / $29,99 knjiga</td></tr>
+    <tr><td>Najveći ticket</td><td>—</td><td>—</td><td class="mono">$100.000</td></tr>
+    <tr><td>Upsell ljestvica</td><td>Nema</td><td>Nema</td><td>5 razina</td></tr>
+    <tr><td>Affiliate</td><td>Nema</td><td>Plaćen sadržajem</td><td>Leaderboard + VIP, gamificiran</td></tr>
+    <tr><td>Ad spend</td><td>Zanemariv</td><td>Umjeren</td><td class="mono">$4M+</td></tr>
+    <tr><td>Email / SMS</td><td>Nizak</td><td>~6 emailova</td><td>5+/dan + SMS + direct mail</td></tr>
+    <tr><td>Fizički bonusi</td><td>Ne</td><td>Ne — digitalni</td><td>12 tiskanih playbooka</td></tr>
+  </table>
+  <div class="callout">
+    <div class="lbl">Pouka</div>
+    <p>Skaliranje nije bilo u taktici nego u <b>ozbiljnosti izvedbe iste taktike</b>. Nije pronašao novi trik — samo je prestao biti pristojan oko frekvencije i produkcije.</p>
+  </div>
+  <div class="tag">Evolucija</div><div class="pnum">21</div>
+</section>
+
+<!-- 22 STEAL -->
+<section class="slide">
+  <div class="eyebrow">Primjena · DA</div>
+  <h2>Osam stvari koje se mogu ukrasti odmah</h2>
+  <div class="rule"></div>
+  <ol class="big" style="font-size:13.4px">
+    <li><b>Reframe kupnje u davanje.</b> <span>"Pokloni 10 mjesta svojim ljudima" umjesto "kupi 10 mjesta". Nula troška, najveći efekt.</span></li>
+    <li><b>Kupac postaje distributer.</b> <span>Paket mjesta/kodova koje mora podijeliti = organski affiliate bez provizije.</span></li>
+    <li><b>Besplatan event kao ulaz, nikad proizvod.</b> <span>Konverzija je red veličine viša; partneri puno lakše promoviraju besplatno.</span></li>
+    <li><b>Event dan PRIJE izlaska proizvoda.</b> <span>Proizvod izlazi u trenutku maksimalne pažnje.</span></li>
+    <li><b>Bonusi "godinama u nastajanju".</b> <span>Vrijednost dolazi iz priče o trudu, ne iz broja bonusa. Klijent uvijek ima arhivu.</span></li>
+    <li><b>Fizički bonus u digitalnoj ponudi.</b> <span>Tiskani workbook poslan poštom diferencira od svakog online tečaja. Mali trošak, veliki skok u percepciji.</span></li>
+    <li><b>Besplatan stack za sve, ne samo kupce.</b> <span>Oni koji ne kupe ostaju na listi za sljedeći put.</span></li>
+    <li><b>Traži share eksplicitno — i daj alat.</b> <span>Affiliate link automatski u drugom emailu + swipe file. Ljudi ne dijele jer ne znaju što napisati.</span></li>
+  </ol>
+  <div class="tag">Primjena</div><div class="pnum">22</div>
+</section>
+
+<!-- 23 SKIP -->
+<section class="slide">
+  <div class="eyebrow">Primjena · NE</div>
+  <h2>Pet stvari koje ne treba kopirati</h2>
+  <div class="rule"></div>
+  <ul class="big no">
+    <li><b>18 sati livestreama.</b> <span>Bez publike od 100k, 7-satni stream je prazna soba. Realno: <b>60–90 minuta</b>, gusto — format iz 2023., ne iz 2025.</span></li>
+    <li><b>5+ emailova dnevno.</b> <span>Na listi od 2.000 ljudi to je masakr. Hormozi si može priuštiti unsubscribe jer stalno puni vrh lijevka. Realno: <b>6–8 emailova kroz 2 tjedna</b> + 2–3 na dan eventa.</span></li>
+    <li><b>Ljestvica do $100.000.</b> <span>Bez track recorda i publike s cash flowom, high ticket iznad ~€3–5k za edukatora ne prolazi. <b>Bolje 2 razine koje konvertiraju nego 5 koje stoje.</b></span></li>
+    <li><b>Rekord kao mehanika.</b> <span>"Najveći ikad" radi jednom i zahtijeva volumen. Zamjena: konkretan, provjerljiv rezultat klijenata kao društveni dokaz.</span></li>
+    <li><b>Ad spend kao pokretač.</b> <span>$4M oglasa je <b>posljedica</b> postojećeg cash flowa, ne uzrok uspjeha. Prvo organski/warm sloj, oglasi tek kad funnel konvertira na toploj publici.</span></li>
+  </ul>
+  <div class="tag">Primjena</div><div class="pnum">23</div>
+</section>
+
+<!-- 24 SKELETON -->
+<section class="slide">
+  <div class="eyebrow">Primjena · Skelet</div>
+  <h2>Adaptirani launch za klijenta-edukatora</h2>
+  <div class="rule"></div>
+  <div class="phases">
+    <div class="phase">
+      <div class="ph">T-4 tjedna</div>
+      <h4>Najava</h4>
+      <ul>
+        <li>Konkretan datum i sat</li>
+        <li>Poziv + "pozovi svoje ljude"</li>
+        <li>Otvara se registracija</li>
+        <li>Teaser bonusa bez otkrivanja svega</li>
+      </ul>
+    </div>
+    <div class="phase">
+      <div class="ph">T-4 → T-0</div>
+      <h4>Runway</h4>
+      <ul>
+        <li>Landing: social proof, screenshotovi rezultata, detaljan popis bonusa</li>
+        <li>Affiliate link automatski u 2. emailu</li>
+        <li>Swipe file partnerima</li>
+        <li>6–8 emailova kroz period</li>
+        <li>Organski sadržaj svaki dan</li>
+      </ul>
+    </div>
+    <div class="phase">
+      <div class="ph">T-0 · dan eventa</div>
+      <h4>Event</h4>
+      <ul>
+        <li>2–3 emaila + SMS podsjetnik</li>
+        <li>Live 60–90 min</li>
+        <li><b>70% edukacije / 30% offer</b></li>
+        <li>Offer se otvara tijekom eventa</li>
+        <li>Prozor se zatvara za 48–72h</li>
+      </ul>
+    </div>
+    <div class="phase">
+      <div class="ph">T+1 → T+3</div>
+      <h4>Zatvaranje</h4>
+      <ul>
+        <li>Proizvod službeno izlazi</li>
+        <li>Replay za one koji su propustili</li>
+        <li>Posljednji push, zatvaranje prozora</li>
+        <li>Zahvala + prelazak na evergreen</li>
+      </ul>
+    </div>
+  </div>
+  <div class="callout" style="margin-top:auto">
+    <div class="lbl">Offer struktura — 3 razine, ne 5</div>
+    <p><b class="hi-grn">$0</b> kompletan bonus stack svima koji su došli &nbsp;→&nbsp;
+       <b>Ulaz</b> proizvod po niskoj cijeni (knjiga / mini-program) &nbsp;→&nbsp;
+       <b class="hi-acc">Glavni offer</b> "pokloni X mjesta" paket + fizički materijal + live workshop
+       &nbsp;<span style="color:var(--dim2)">(+ opcionalno 1 upsell: group coaching / advisory)</span></p>
+  </div>
+  <div class="tag">Primjena</div><div class="pnum">24</div>
+</section>
+
+<!-- 25 CLOSE -->
+<section class="slide divider" style="justify-content:center">
+  <div class="eyebrow">Zaključak</div>
+  <h1 style="font-size:42px; max-width:10in; line-height:1.25">
+    Launch nije uspio zbog funnela —<br>funnel je bio <span style="color:var(--dim2)">standardan</span>.
+  </h1>
+  <p style="font-size:20px; color:var(--dim); margin-top:26px; max-width:9in; line-height:1.5">
+    Uspio je jer je <b class="hi-acc">četiri godine besplatno davao ono za što drugi naplaćuju</b>,
+    pa je onda jednom naplatio.
+  </p>
+  <p style="font-size:16px; color:var(--dim2); margin-top:30px; max-width:8.4in">
+    Taktike iz ovog dosjea <b style="color:var(--ink)">ubrzavaju naplatu</b>. Ne zamjenjuju depozit.
+  </p>
+  <div class="tag">Puni dosje + izvori: research/hormozi-book-launches/</div>
+  <div class="pnum">25</div>
+</section>
+
+</body>
+</html>

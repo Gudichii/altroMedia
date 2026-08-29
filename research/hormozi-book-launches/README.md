@@ -9,6 +9,11 @@ izvora (case studyji, podcasti, njegovi vlastiti postovi, analize marketera).
 | 2 | **$100M Leads** | 19. 8. 2023. (event) / 20. 8. 2023. (izlazak) | Besplatni live webinar + affiliate armija | 200k+ registracija, 800.000+ primjeraka |
 | 3 | **$100M Money Models** | 16. 8. 2025. | 3-dnevni livestream maraton + tiered offer | ~2,9 mil. primjeraka u 24h, ~$81–87M day one, Guinness rekord |
 
+## Prezentacija
+
+- **`hormozi-3-launcha-prezentacija.pdf`** — 25 slajdova, 16:9, interna verzija (gusto, brojke, bez uljepšavanja)
+- `prezentacija-source.html` — izvor iz kojeg je PDF renderiran (uredi pa re-renderiraj headless Chromiumom)
+
 ## Fileovi u ovom folderu
 
 - `01-100m-offers-2021.md` — prvi launch, "value-first" faza, kako je izgradio bazu
