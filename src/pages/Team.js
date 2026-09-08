@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import KarloImia from '../assets/img/KarloImia.png';
+import KarloImia from '../assets/img/KarloiMia.png';
 import Karlo from '../assets/img/Karlo.png';
 import Mia from '../assets/img/Mia.png';
 import styles from '@/styles/Main.module.scss'
