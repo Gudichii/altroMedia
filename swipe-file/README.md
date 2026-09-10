@@ -32,6 +32,15 @@ i snimiš u `_captures/`. Kako to točno raditi → `00-metodologija/kako-funnel
 
 ---
 
+## 📄 Sve u jednom dokumentu
+
+Ako hoćeš samo čitati i Ctrl+F kroz cijeli swipe:
+**[`SVE-U-JEDNOM.md`](SVE-U-JEDNOM.md)** — svih 31 dokumenata spojenih u jedan fajl (~5.000 linija).
+
+Pojedinačne dokumente ispod koristi kad radiš na konkretnom klijentu.
+
+---
+
 ## Struktura foldera
 
 ```
