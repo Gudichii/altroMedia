@@ -1,0 +1,14 @@
+{
+  "name": "swipe-capture",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "setup": "npm i && npx playwright install chromium",
+    "live": "node capture.mjs",
+    "history": "node wayback.mjs",
+    "index": "node build-index.mjs",
+    "all": "node capture.mjs && node wayback.mjs && node build-index.mjs"
+  },
+  "dependencies": { "playwright": "^1.49.0" }
+}

@@ -25,7 +25,12 @@ egress (dopušteni su samo GitHub i package registryji). `dotcomsecrets.com`,
 (`archive.org`) — sve blokirano. Web **pretraga** radi (ide serverski), skidanje
 stranica ne.
 
-**Zato je u svakom dokumentu naveden live URL.** Otvoriš ga u browseru,
+**Za skidanje pravih stranica postoji alat:** `../swipe-capture/` — Playwright
+skripta koja skine screenshotove, PDF-ove i cijele stranice svih ovih funnela
+(plus povijesne verzije s Wayback Machinea, 2015→danas) u folder `SWIPE/` na
+tvom računalu. Dvije naredbe. Upute: `../swipe-capture/README.md`.
+
+**Uz to, u svakom dokumentu je naveden live URL.** Otvoriš ga u browseru,
 prođeš funnel do kraja (kupi najjeftiniji proizvod da vidiš cijeli upsell
 stack — to je najbolje potrošenih 10-100$ u tvom marketinškom obrazovanju),
 i snimiš u `_captures/`. Kako to točno raditi → `00-metodologija/kako-funnel-hackati.md`.

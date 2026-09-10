@@ -1,0 +1,67 @@
+{
+  "_comment": "Ciljevi za capture. URL-ovi prikupljeni istrazivanjem (rujan 2026). Neki mogu biti mrtvi ili redirectani - skripta to logira u FAILED.txt, ne pada.",
+  "targets": [
+    { "guru": "01-brunson", "funnel": "dotcomsecrets",      "step": "01-salespage",  "url": "https://www.dotcomsecrets.com/" },
+    { "guru": "01-brunson", "funnel": "expertsecrets",      "step": "01-salespage",  "url": "https://expertsecrets.com/" },
+    { "guru": "01-brunson", "funnel": "trafficsecrets",     "step": "01-salespage",  "url": "https://trafficsecrets.com/" },
+    { "guru": "01-brunson", "funnel": "onefunnelaway",      "step": "01-salespage",  "url": "https://onefunnelaway.com/" },
+    { "guru": "01-brunson", "funnel": "yourfirstfunnel",    "step": "01-salespage",  "url": "https://yourfirstfunnel.com/" },
+    { "guru": "01-brunson", "funnel": "clickfunnels",       "step": "01-home",       "url": "https://www.clickfunnels.com/" },
+    { "guru": "01-brunson", "funnel": "clickfunnels",       "step": "02-pricing",    "url": "https://www.clickfunnels.com/pricing" },
+    { "guru": "01-brunson", "funnel": "funnelhackinglive",  "step": "01-event",      "url": "https://www.funnelhackinglive.com/" },
+    { "guru": "01-brunson", "funnel": "funnelhackinglive",  "step": "02-intl",       "url": "https://www.funnelhackinglive.com/international" },
+    { "guru": "01-brunson", "funnel": "secretsofsuccess",   "step": "01-salespage",  "url": "https://www.secretsofsuccess.com/" },
+
+    { "guru": "02-hormozi", "funnel": "acquisition",        "step": "01-home",       "url": "https://www.acquisition.com/" },
+    { "guru": "02-hormozi", "funnel": "acquisition",        "step": "02-training",   "url": "https://www.acquisition.com/training" },
+    { "guru": "02-hormozi", "funnel": "scaling-workshop",   "step": "01-offer",      "url": "https://www.acquisition.com/workshop-4b" },
+    { "guru": "02-hormozi", "funnel": "scaling-workshop",   "step": "02-three",      "url": "https://www.acquisition.com/three-2" },
+    { "guru": "02-hormozi", "funnel": "scaling-workshop",   "step": "03-private",    "url": "https://www.acquisition.com/privateworkshop" },
+    { "guru": "02-hormozi", "funnel": "books",              "step": "01-shop",       "url": "https://shop.acquisition.com/" },
+    { "guru": "02-hormozi", "funnel": "books",              "step": "02-offers",     "url": "https://www.acquisition.com/books/offers" },
+    { "guru": "02-hormozi", "funnel": "books",              "step": "03-leads",      "url": "https://www.acquisition.com/books/leads" },
+    { "guru": "02-hormozi", "funnel": "books",              "step": "04-moneymodels","url": "https://www.acquisition.com/books/money-models" },
+
+    { "guru": "03-gadzhi",  "funnel": "agency-incubator",   "step": "01-salespage",  "url": "https://imangadzhi.clickfunnels.com/sales-page-36948733" },
+    { "guru": "03-gadzhi",  "funnel": "agency-navigator",   "step": "01-template",   "url": "https://imangadzhi.clickfunnels.com/template-21618949883731" },
+    { "guru": "03-gadzhi",  "funnel": "educate",            "step": "01-home",       "url": "https://educate.io/" },
+    { "guru": "03-gadzhi",  "funnel": "educate",            "step": "02-navigator",  "url": "https://educate.io/agency-navigator" },
+    { "guru": "03-gadzhi",  "funnel": "iag-media",          "step": "01-home",       "url": "https://www.iag-media.com/" },
+
+    { "guru": "04-ovens",   "funnel": "consulting-com",     "step": "01-home",       "url": "https://www.consulting.com/" },
+
+    { "guru": "05-walker",  "funnel": "plf",                "step": "01-class",      "url": "https://www.productlaunchclass.com/" },
+    { "guru": "05-walker",  "funnel": "plf",                "step": "02-home",       "url": "https://productlaunchformula.com/" },
+
+    { "guru": "06-graziosi","funnel": "kbb",                "step": "01-salespage",  "url": "https://knowledgebusiness.com/knowledge-broker-blueprint/" },
+    { "guru": "06-graziosi","funnel": "mastermind",         "step": "01-home",       "url": "https://mastermind.com/" },
+
+    { "guru": "07-cardone", "funnel": "10x-growth-con",     "step": "01-event",      "url": "https://10xgrowthcon.com/" },
+    { "guru": "07-cardone", "funnel": "10x-growth-con",     "step": "02-what-is",    "url": "https://10xgrowthcon.com/what-is-10x-growth-con/" },
+    { "guru": "07-cardone", "funnel": "10x-growth-con",     "step": "03-optin",      "url": "https://gc.grantcardone.com/optin-629620121739822001742" },
+    { "guru": "07-cardone", "funnel": "10x-growth-con",     "step": "04-secure",     "url": "https://gc.10xgrowthcon.com/2024-secure-seat" },
+
+    { "guru": "08-ostali",  "funnel": "digitalmarketer",    "step": "01-home",       "url": "https://www.digitalmarketer.com/" },
+    { "guru": "08-ostali",  "funnel": "amy-porterfield",    "step": "01-home",       "url": "https://www.amyporterfield.com/" },
+    { "guru": "08-ostali",  "funnel": "amy-porterfield",    "step": "02-dca",        "url": "https://www.amyporterfield.com/digitalcourseacademy/" },
+    { "guru": "08-ostali",  "funnel": "skool",              "step": "01-home",       "url": "https://www.skool.com/" },
+    { "guru": "08-ostali",  "funnel": "skool-games",        "step": "01-games",      "url": "https://www.skool.com/games" }
+  ],
+
+  "_wayback_comment": "Za povijesne verzije: skripta povlaci snapshot po godini za svaku domenu. Ovdje je stvarno 'sve sto su radili kroz 10 godina'.",
+  "wayback": [
+    { "guru": "01-brunson", "domain": "dotcomsecrets.com",     "years": [2015,2016,2017,2018,2019,2020,2021,2022,2023,2024,2025,2026] },
+    { "guru": "01-brunson", "domain": "expertsecrets.com",     "years": [2017,2018,2019,2020,2021,2022,2023,2024,2025,2026] },
+    { "guru": "01-brunson", "domain": "trafficsecrets.com",    "years": [2020,2021,2022,2023,2024,2025,2026] },
+    { "guru": "01-brunson", "domain": "onefunnelaway.com",     "years": [2019,2020,2021,2022,2023,2024,2025,2026] },
+    { "guru": "01-brunson", "domain": "clickfunnels.com",      "years": [2015,2016,2017,2018,2019,2020,2021,2022,2023,2024,2025,2026] },
+    { "guru": "01-brunson", "domain": "funnelhackinglive.com", "years": [2016,2017,2018,2019,2020,2021,2022,2023,2024,2025,2026] },
+    { "guru": "02-hormozi", "domain": "acquisition.com",       "years": [2021,2022,2023,2024,2025,2026] },
+    { "guru": "02-hormozi", "domain": "gymlaunch.com",         "years": [2017,2018,2019,2020,2021] },
+    { "guru": "03-gadzhi",  "domain": "growyouragency.com",    "years": [2018,2019,2020,2021,2022,2023] },
+    { "guru": "03-gadzhi",  "domain": "educate.io",            "years": [2023,2024,2025,2026] },
+    { "guru": "04-ovens",   "domain": "consulting.com",        "years": [2017,2018,2019,2020,2021,2022] },
+    { "guru": "06-graziosi","domain": "knowledgebusiness.com", "years": [2019,2020,2021,2022] },
+    { "guru": "07-cardone", "domain": "10xgrowthcon.com",      "years": [2017,2018,2019,2020,2021,2022,2023,2024,2025] }
+  ]
+}
