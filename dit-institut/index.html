@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DIT Institut - Karmen Jerkovic Yucel</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://fast.wistia.com/player.js" async></script>
+<script src="https://fast.wistia.com/embed/w5wnc61p93.js" async type="module"></script>
+<style>wistia-player[media-id='w5wnc61p93']:not(:defined) { background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/w5wnc61p93/swatch'); display: block; filter: blur(5px); padding-top:56.25%; }</style>
+<style>
+  html, body { margin: 0; padding: 0; overflow-x: hidden; }
+  body { background: oklch(97% 0.006 75); font-family: 'Work Sans', sans-serif; }
+  a { color: oklch(38% 0.09 275); }
+  a:hover { color: oklch(30% 0.09 275); }
+  input, textarea { font-family: 'Work Sans', sans-serif; }
+  .faq-a { display: none; }
+  .faq-item.open .faq-a { display: block; }
+  .faq-item.open .faq-symbol { color: oklch(45% 0.11 195); }
+
+  .page-wrap { width: 100vw; position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw; }
+
+  .announce-bar { position: sticky; top: 0; z-index: 999; width: 100%; background: oklch(88% 0.16 95 / 0.55); color: oklch(30% 0.04 90); font-family: 'Work Sans', sans-serif; font-weight: 600; font-size: clamp(12.5px, 1.6vw, 14.5px); text-align: center; padding: 11px 16px; box-sizing: border-box; box-shadow: 0 2px 10px oklch(20% 0.02 275 / 0.08); letter-spacing: 0.01em; backdrop-filter: blur(2px); }
+
+  .btn-secondary-text { display: block; font-size: 11.5px; font-weight: 500; opacity: 0.82; letter-spacing: 0.01em; margin-top: 2px; }
+
+  .hero-section { width:100%; max-width:760px; padding: clamp(28px, 6vw, 96px) 32px clamp(20px, 3vw, 40px); display:flex; flex-direction:column; align-items:center; text-align:center; gap: clamp(14px, 2vw, 24px); box-sizing:border-box; }
+  .hero-eyebrow { font-family:'Work Sans',sans-serif; font-size:13px; font-weight:600; letter-spacing:0.14em; text-transform:uppercase; color:oklch(45% 0.11 195); }
+  .hero-title { font-family:'Newsreader',serif; font-weight:500; font-size: clamp(28px, 4.6vw, 48px); line-height:1.16; margin:0; color:oklch(24% 0.05 275); max-width:680px; }
+  .hero-sub { font-family:'Work Sans',sans-serif; font-size: clamp(15px, 1.8vw, 19px); line-height:1.55; color:oklch(38% 0.015 275); max-width:600px; margin:0; }
+  .hero-video-hint { font-family:'Work Sans',sans-serif; font-size: clamp(13px, 1.6vw, 15px); font-weight:600; color:oklch(45% 0.11 195); margin:0; display:flex; align-items:center; justify-content:center; gap:8px; }
+  .bounce-arrow { display:inline-block; animation: bounce-y 1.4s ease-in-out infinite; }
+  @keyframes bounce-y { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(4px); } }
+  .video-section { width:100%; max-width:920px; padding: 0 32px clamp(20px, 3vw, 40px); box-sizing:border-box; }
+
+  .chat-grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; width:100%; max-width:820px; }
+  .chat-bubble { background:oklch(99% 0.003 90); border-radius:16px; border-top-left-radius:4px; padding:16px 18px; box-shadow:0 2px 8px oklch(20% 0.02 275 / 0.06); display:flex; flex-direction:column; gap:8px; text-align:left; }
+  .chat-bubble-header { display:flex; align-items:center; gap:8px; }
+  .chat-avatar { width:30px; height:30px; border-radius:50%; background:oklch(45% 0.11 195); color:oklch(99% 0.005 195); font-family:'Work Sans',sans-serif; font-weight:700; font-size:12.5px; display:flex; align-items:center; justify-content:center; flex:none; }
+  .chat-name { font-family:'Work Sans',sans-serif; font-weight:600; font-size:13.5px; color:oklch(26% 0.01 275); }
+  .chat-text { font-size:14px; line-height:1.55; color:oklch(38% 0.01 275); margin:0; }
+  .chat-check { margin-left:auto; font-size:11px; color:oklch(50% 0.1 190); }
+
+  .compare-card { transition: transform 0.3s ease; }
+  .compare-card:hover { transform: translateY(-4px); }
+  .compare-icon-wrap { animation: gentle-pulse-ring 3.4s ease-in-out infinite; }
+  @keyframes gentle-pulse-ring {
+    0%, 100% { box-shadow: 0 0 0 0 oklch(75% 0.1 195 / 0.4); }
+    50% { box-shadow: 0 0 0 9px oklch(75% 0.1 195 / 0); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .compare-card { transition: none; }
+    .compare-icon-wrap { animation: none; }
+  }
+
+  /* Reserve CTA card — replaces the old inline form block */
+  .reserve-card { width:100%; max-width:620px; background:oklch(100% 0 0); border:1px solid oklch(88% 0.01 275); border-radius:18px; padding:clamp(32px,5vw,48px) clamp(24px,5vw,44px); box-sizing:border-box; display:flex; flex-direction:column; align-items:center; gap:16px; text-align:center; box-shadow:0 20px 50px -24px oklch(20% 0.05 275 / 0.35); }
+  .reserve-card-icon { width:52px; height:52px; border-radius:50%; background:oklch(45% 0.11 195 / 0.12); display:flex; align-items:center; justify-content:center; color:oklch(45% 0.11 195); }
+  .reserve-steps { display:flex; flex-wrap:wrap; justify-content:center; gap:10px 22px; margin-top:4px; }
+  .reserve-step { display:flex; align-items:center; gap:7px; font-size:12.5px; color:oklch(42% 0.01 275); }
+  .reserve-step-num { width:18px; height:18px; border-radius:50%; background:oklch(45% 0.11 195); color:oklch(99% 0.005 195); font-size:10.5px; font-weight:700; display:flex; align-items:center; justify-content:center; flex:none; }
+
+  @media (max-width: 640px) {
+    .hero-section { padding-top: 24px; gap: 12px; }
+    .chat-grid { grid-template-columns:1fr; }
+    .testimonial-grid { grid-template-columns:repeat(2, 1fr) !important; }
+    .trio-grid { grid-template-columns:1fr !important; }
+    .podcast-grid { grid-template-columns:repeat(2, 1fr) !important; }
+    .video-quad-grid { grid-template-columns:1fr !important; }
+  }
+  /* Uske i srednje sirine: kutije jedna ispod druge, strelica UVIJEK izmedju njih */
+  @media (max-width: 900px) {
+    .compare-row { flex-direction: column; flex-wrap: nowrap; }
+    .compare-card { width: 100%; max-width: 340px !important; flex: 0 0 auto !important; }
+    .compare-arrow { padding: 2px 0 !important; }
+    .compare-arrow svg { transform: rotate(90deg); }
+  }
+  @media (max-width: 900px) and (min-width: 641px) {
+    .podcast-grid { grid-template-columns:repeat(3, 1fr) !important; }
+  }
+
+  /* Desktop-only: compact hero + video + CTA so the full video and button fit above the fold */
+  @media (min-width: 641px) {
+    .announce-bar { padding: 9px 16px; }
+    .hero-section { padding: 34px 32px 12px; gap: 14px; }
+    .hero-title { font-size: clamp(22px, 2.6vw, 34px); line-height: 1.16; }
+    .hero-sub { font-size: clamp(13.5px, 1.15vw, 16px); line-height: 1.45; max-width: 560px; }
+    .hero-video-hint { font-size: 13.5px; }
+    .video-section {
+      padding: 0 32px 16px;
+      margin: 0 auto;
+      max-width: min(700px, max(300px, calc((100vh - 380px) * 1.7778)));
+    }
+    .cta-primary-section { padding-top: 0 !important; padding-bottom: 24px !important; }
+    .cta-primary-section a { padding: 12px 34px !important; font-size: 15px !important; }
+  }
+
+  /* Footer */
+  .dit-footer-wrap { width: 100vw; position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw; }
+</style>
+</head>
+<body>
+
+<div class="page-wrap" style="display:flex; flex-direction:column; align-items:center; background:oklch(97% 0.006 75); color:oklch(22% 0.01 275);">
+
+  <div class="announce-bar">
+    🟡 Sljedeće edukacije: uživo u Zagrebu od 02.12.2026 · online od 09.01.2027
+  </div>
+
+  <section class="hero-section">
+    <div class="hero-eyebrow">DIT Institut - Karmen Jerkovic Yucel</div>
+    <h1 class="hero-title">Postani certificirani DIT hipnoterapeut za 5 dana — i počni mijenjati živote već sljedeći mjesec</h1>
+    <p class="hero-sub">Od 'voljela bih pomagati ljudima' do terapeuta koji zna otkriti pravi uzrok svih problema svojih klijenata — u samo 5 dana. Pogledaj video ispod i saznaj kako izgleda edukacija koja te uči ući u tuđu podsvijest i naći rješenje — ne simptom.</p>
+    <p class="hero-video-hint"><span class="bounce-arrow">▾</span> Pogledaj video ispod (pričekaj da se video učita) <span class="bounce-arrow">▾</span></p>
+  </section>
+
+  <section class="video-section">
+    <div style="position:relative; width:100%; border-radius:14px; overflow:hidden; background:oklch(18% 0.04 275); box-shadow:0 24px 60px -20px oklch(20% 0.05 275 / 0.45);">
+      <wistia-player media-id="w5wnc61p93" aspect="1.7777777777777777"></wistia-player>
+    </div>
+  </section>
+
+  <section class="cta-primary-section" style="width:100%; padding:0 32px 56px; box-sizing:border-box; display:flex; justify-content:center;">
+    <a href="https://ditinstitut.com/forma" style="text-decoration:none; background:oklch(45% 0.11 195); color:oklch(99% 0.01 195); font-family:'Work Sans',sans-serif; font-weight:600; font-size:17px; padding:16px 42px; border-radius:8px; box-shadow:0 10px 30px -8px oklch(45% 0.11 195 / 0.5); cursor:pointer; text-align:center; line-height:1.3;">Rezerviraj svoje mjesto<span class="btn-secondary-text">Sljedeći termini: Zagreb 2.12.2026 · Online 9.1.2027</span></a>
+  </section>
+
+  <section style="width:100%; max-width:820px; padding:0 32px 72px; box-sizing:border-box; display:flex; flex-direction:column; gap:18px;">
+    <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:36px; padding:28px 24px; border-top:1px solid oklch(85% 0.01 275); border-bottom:1px solid oklch(85% 0.01 275);">
+      <div style="display:flex; flex-direction:column; align-items:center; gap:4px; min-width:120px;">
+        <span style="font-family:'Newsreader',serif; font-size:30px; font-weight:500; color:oklch(30% 0.08 275);">15+</span>
+        <span style="font-size:12.5px; color:oklch(45% 0.01 275); text-align:center;">država u kojima rade DIT hipnoterapeuti</span>
+      </div>
+      <div style="display:flex; flex-direction:column; align-items:center; gap:4px; min-width:120px;">
+        <span style="font-family:'Newsreader',serif; font-size:30px; font-weight:500; color:oklch(30% 0.08 275);">5</span>
+        <span style="font-size:12.5px; color:oklch(45% 0.01 275); text-align:center;">prosječna ocjena Edukacije</span>
+      </div>
+      <div style="display:flex; flex-direction:column; align-items:center; gap:4px; min-width:120px;">
+        <span style="font-family:'Newsreader',serif; font-size:30px; font-weight:500; color:oklch(30% 0.08 275);">5 dana</span>
+        <span style="font-size:12.5px; color:oklch(45% 0.01 275); text-align:center;">do certifikata</span>
+      </div>
+    </div>
+    <div style="display:flex; flex-wrap:wrap; justify-content:center; align-items:center; gap:28px; opacity:0.65;">
+      <div style="font-family:ui-monospace,monospace; font-size:11px; letter-spacing:0.06em; text-transform:uppercase; padding:8px 16px; border:1px solid oklch(55% 0.01 275); border-radius:6px; color:oklch(40% 0.01 275);">CERTIFIKAT DIT</div>
+      <div style="font-family:ui-monospace,monospace; font-size:11px; letter-spacing:0.06em; text-transform:uppercase; padding:8px 16px; border:1px solid oklch(55% 0.01 275); border-radius:6px; color:oklch(40% 0.01 275);">MEĐUNARODNO PRIZNATO</div>
+    </div>
+  </section>
+
+  <section style="width:100%; max-width:760px; padding:0 32px 40px; box-sizing:border-box; text-align:center;">
+    <h2 style="font-family:'Work Sans',sans-serif; font-weight:600; font-size:28px; color:oklch(24% 0.05 275); margin:0 0 10px;">Evo što kažu polaznici koji su prošli edukaciju</h2>
+    <p style="margin:0; font-size:16px; color:oklch(45% 0.01 275);">Stvarni ljudi, stvarne promjene u karijeri i samopouzdanju &mdash; ne obećanja, nego iskustva.</p>
+  </section>
+
+  <section style="width:100%; max-width:1280px; padding:0 32px 56px; box-sizing:border-box;">
+    <div id="testimonial-grid" class="testimonial-grid" style="display:grid; grid-template-columns:repeat(4, 1fr); gap:14px;"></div>
+  </section>
+
+  <section style="width:100%; padding:0 32px 88px; box-sizing:border-box; display:flex; justify-content:center;">
+    <a href="https://ditinstitut.com/forma" style="text-decoration:none; background:oklch(45% 0.11 195); color:oklch(99% 0.01 195); font-family:'Work Sans',sans-serif; font-weight:600; font-size:17px; padding:16px 42px; border-radius:8px; box-shadow:0 10px 30px -8px oklch(45% 0.11 195 / 0.5); cursor:pointer; text-align:center; line-height:1.3;">Rezerviraj svoje mjesto<span class="btn-secondary-text">Sljedeći termini: Zagreb 2.12.2026 · Online 9.1.2027</span></a>
+  </section>
+
+  <section style="width:100%; max-width:920px; padding:24px 32px 88px; box-sizing:border-box; display:flex; flex-direction:column; align-items:center; gap:40px; text-align:center;">
+    <h2 style="font-family:'Newsreader',serif; font-weight:500; font-size:32px; color:oklch(24% 0.05 275); margin:0; max-width:600px;">Podsvijest već zna odgovor. Pitanje je znaš li ga tražiti.</h2>
+    <div class="compare-row" style="display:flex; flex-wrap:nowrap; align-items:center; justify-content:center; gap:20px; width:100%;">
+      <div class="compare-card" style="flex:1 1 260px; max-width:300px; background:oklch(100% 0 0); border:1px solid oklch(85% 0.01 275); border-radius:12px; padding:28px 24px; text-align:left; display:flex; flex-direction:column; gap:12px;">
+        <div style="width:40px; height:40px; border-radius:50%; background:oklch(94% 0.008 275); display:flex; align-items:center; justify-content:center; color:oklch(45% 0.02 275);">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5.5h16a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H9l-4 3.5v-3.5H4a1 1 0 0 1-1-1v-9a1 1 0 0 1 1-1z"/></svg>
+        </div>
+        <span style="font-family:ui-monospace,monospace; font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:oklch(50% 0.01 275);">Klasična psihoterapija</span>
+        <span style="font-family:'Work Sans',sans-serif; font-weight:700; font-size:18px; color:oklch(30% 0.01 275);">SIMPTOM</span>
+        <p style="margin:0; font-size:14.5px; line-height:1.55; color:oklch(42% 0.01 275);">Traži odgovore kroz svjesni um, koji barata s malim brojem informacija i sjećanja.</p>
+      </div>
+      <div class="compare-arrow" style="flex:0 0 auto; display:flex; align-items:center; justify-content:center; padding:0 4px;">
+        <svg width="56" height="24" viewBox="0 0 56 24" aria-hidden="true"><line x1="0" y1="12" x2="46" y2="12" stroke="oklch(60% 0.02 275)" stroke-width="2"></line><polygon points="46,4 56,12 46,20" fill="oklch(45% 0.11 195)"></polygon></svg>
+      </div>
+      <div class="compare-card compare-card-dark" style="flex:1 1 260px; max-width:300px; background:oklch(30% 0.08 275); border-radius:12px; padding:28px 24px; text-align:left; display:flex; flex-direction:column; gap:12px; box-shadow:0 12px 32px -12px oklch(30% 0.08 275 / 0.5);">
+        <div class="compare-icon-wrap" style="width:40px; height:40px; border-radius:50%; background:oklch(97% 0.005 275 / 0.14); display:flex; align-items:center; justify-content:center; color:oklch(75% 0.08 195);">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="5" r="2.2"/><path d="M12 7.2v4.3"/><path d="M12 11.5c-2.3 0-3.9 2-4.5 5.6"/><path d="M12 11.5c2.3 0 3.9 2 4.5 5.6"/><path d="M12 11.5c0 3-.5 4.4-.5 5.6"/></svg>
+        </div>
+        <span style="font-family:ui-monospace,monospace; font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:oklch(75% 0.05 190);">DIT metoda</span>
+        <span style="font-family:'Work Sans',sans-serif; font-weight:700; font-size:18px; color:oklch(97% 0.005 275);">UZROK</span>
+        <p style="margin:0; font-size:14.5px; line-height:1.55; color:oklch(88% 0.01 275);">Odgovore pronalazi u nesvjesnom umu, koji daje točne uzroke ali i upute za rješenje problema.</p>
+      </div>
+    </div>
+    <p style="margin:0; font-size:15.5px; line-height:1.6; color:oklch(42% 0.01 275); max-width:560px;">DIT kroz rad s podsvjesnim i nadsvjesnim umom otkriva jedinstvene upute za svaku osobu &ndash; što treba napraviti kako bi problem nestao što brže, lakše i trajno.</p>
+
+    <div style="width:64px; height:1px; background:oklch(82% 0.012 275);"></div>
+
+    <div class="trio-grid" style="display:grid; grid-template-columns:repeat(3, 1fr); gap:18px; width:100%; max-width:820px;">
+      <div style="background:oklch(100% 0 0); border:1px solid oklch(88% 0.01 275); border-radius:12px; padding:22px 20px; text-align:left; display:flex; flex-direction:column; gap:8px;">
+        <span style="font-size:22px;">1️⃣</span>
+        <span style="font-family:'Work Sans',sans-serif; font-weight:700; font-size:15px; color:oklch(24% 0.05 275);">Jedna seansa</span>
+        <p style="margin:0; font-size:13.5px; line-height:1.5; color:oklch(45% 0.01 275);">Ne mjeseci razgovora — DIT daje rješenja u jednoj sesiji, uživo ili online.</p>
+      </div>
+      <div style="background:oklch(100% 0 0); border:1px solid oklch(88% 0.01 275); border-radius:12px; padding:22px 20px; text-align:left; display:flex; flex-direction:column; gap:8px;">
+        <span style="font-size:22px;">2️⃣</span>
+        <span style="font-family:'Work Sans',sans-serif; font-weight:700; font-size:15px; color:oklch(24% 0.05 275);">Bez nagađanja terapeuta</span>
+        <p style="margin:0; font-size:13.5px; line-height:1.5; color:oklch(45% 0.01 275);">Terapeut ne tumači što podsvijest "misli" — ona sama daje konkretan, eksplicitan odgovor. Odgovori su uvijek 100% točni za klijenta.</p>
+      </div>
+      <div style="background:oklch(100% 0 0); border:1px solid oklch(88% 0.01 275); border-radius:12px; padding:22px 20px; text-align:left; display:flex; flex-direction:column; gap:8px;">
+        <span style="font-size:22px;">3️⃣</span>
+        <span style="font-family:'Work Sans',sans-serif; font-weight:700; font-size:15px; color:oklch(24% 0.05 275);">Ne možeš pogriješiti</span>
+        <p style="margin:0; font-size:13.5px; line-height:1.5; color:oklch(45% 0.01 275);">DIT terapeut ništa ne preporučuje niti savjetuje — samo vodi proces. Zato je metoda sigurna i za potpune početnike.</p>
+      </div>
+    </div>
+
+    <div style="width:64px; height:1px; background:oklch(82% 0.012 275);"></div>
+
+    <div class="video-quad-grid" style="display:grid; grid-template-columns:repeat(3, 1fr); gap:16px; width:100%; max-width:700px;">
+      <div style="display:flex; flex-direction:column; gap:10px; align-items:center;">
+        <p style="margin:0; font-size:12.5px; font-weight:600; line-height:1.35; color:oklch(45% 0.11 195); text-align:center;">▾ Karmen u kratkom videu objašnjava DIT metodu ▾</p>
+        <div style="position:relative; width:100%; aspect-ratio:9/16; border-radius:12px; overflow:hidden; background:oklch(18% 0.04 275); box-shadow:0 16px 40px -16px oklch(20% 0.05 275 / 0.45);">
+          <video controls playsinline preload="metadata" style="width:100%; height:100%; display:block; object-fit:cover;">
+            <source src="https://assets.cdn.filesafe.space/ZvcMC6nxu7v212Y6rFzC/media/6a6a4a6cbaa5a87f993bbf13.mp4" type="video/mp4">
+            Vaš preglednik ne podržava reprodukciju videa.
+          </video>
+        </div>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:10px; align-items:center;">
+        <p style="margin:0; font-size:12.5px; font-weight:600; line-height:1.35; color:oklch(45% 0.11 195); text-align:center;">▾ Karmen odgovara: treba li posebno obrazovanje za hipnoterapeuta? ▾</p>
+        <div style="position:relative; width:100%; aspect-ratio:9/16; border-radius:12px; overflow:hidden; background:oklch(18% 0.04 275); box-shadow:0 16px 40px -16px oklch(20% 0.05 275 / 0.45);">
+          <video controls playsinline preload="metadata" style="width:100%; height:100%; display:block; object-fit:cover;">
+            <source src="https://assets.cdn.filesafe.space/ZvcMC6nxu7v212Y6rFzC/media/6a70b84be5155ede640600ef.mp4" type="video/mp4">
+            Vaš preglednik ne podržava reprodukciju videa.
+          </video>
+        </div>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:10px; align-items:center;">
+        <p style="margin:0; font-size:12.5px; font-weight:600; line-height:1.35; color:oklch(45% 0.11 195); text-align:center;">▾ Karmen odgovara: što ako te je strah hipnoze? ▾</p>
+        <div style="position:relative; width:100%; aspect-ratio:9/16; border-radius:12px; overflow:hidden; background:oklch(18% 0.04 275); box-shadow:0 16px 40px -16px oklch(20% 0.05 275 / 0.45);">
+          <video controls playsinline preload="metadata" style="width:100%; height:100%; display:block; object-fit:cover;">
+            <source src="https://assets.cdn.filesafe.space/ZvcMC6nxu7v212Y6rFzC/media/6a70b7d5e5155ede6405bc73.mp4" type="video/mp4">
+            Vaš preglednik ne podržava reprodukciju videa.
+          </video>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="width:100%; background:oklch(94% 0.012 275); padding:clamp(48px,7vw,72px) 32px; box-sizing:border-box; display:flex; justify-content:center;">
+    <div style="max-width:660px; display:flex; flex-direction:column; align-items:center; gap:18px; text-align:center;">
+      <h2 style="font-family:'Newsreader',serif; font-weight:500; font-size:clamp(26px,3.4vw,32px); color:oklch(24% 0.05 275); margin:0;">Zašto klasične metode ne rješavaju problem do kraja</h2>
+      <p style="margin:0; font-size:15.5px; line-height:1.65; color:oklch(42% 0.01 275); max-width:600px;">Psihoterapija, lijekovi, coaching &mdash; sve to najčešće radi na simptomu, ne na uzroku. Pitaju &laquo;kako se osjećaš&raquo;, a ne &laquo;kako to riješiti&raquo;.</p>
+      <p style="margin:0; font-size:15.5px; line-height:1.65; color:oklch(42% 0.01 275); max-width:600px;">Svaki problem, blokada ili loša navika ima svoju &laquo;misiju&raquo; &mdash; razlog zašto postoji. Dok se ta misija ne ispuni na pravi način, podsvijest je jednostavno neće pustiti &mdash; koliko god razgovarali o tome.</p>
+      <p style="margin:0; font-size:16.5px; font-weight:600; line-height:1.6; color:oklch(30% 0.08 275); max-width:600px;">Zato ljudi mjesecima ili godinama rade na sebi bez pravog pomaka &mdash; i zato na kraju traže nešto drugačije.</p>
+    </div>
+  </section>
+
+  <section style="width:100%; background:oklch(100% 0 0); padding:clamp(48px,7vw,80px) 32px; box-sizing:border-box; display:flex; justify-content:center;">
+    <div style="max-width:680px; display:flex; flex-direction:column; align-items:center; gap:28px; text-align:center;">
+      <h2 style="font-family:'Newsreader',serif; font-weight:500; font-size:clamp(26px,3.4vw,32px); color:oklch(24% 0.05 275); margin:0;">Ovo je za tebe ako...</h2>
+      <img src="https://assets.cdn.filesafe.space/ZvcMC6nxu7v212Y6rFzC/media/6a6a4ec48c38306c3d8568b7.jpg" alt="Karmen Jerković" style="width:140px; height:140px; border-radius:50%; object-fit:cover; box-shadow:0 12px 30px -10px oklch(20% 0.05 275 / 0.4);">
+      <div style="display:flex; flex-direction:column; gap:0; width:100%; max-width:540px; text-align:left;">
+        <div style="display:flex; align-items:flex-start; gap:12px; padding:16px 4px; border-bottom:1px solid oklch(90% 0.01 275);">
+          <span style="color:oklch(45% 0.11 195); font-weight:700; font-size:16px; flex:none;">✓</span>
+          <span style="font-size:15px; line-height:1.5; color:oklch(30% 0.01 275);">Osjećaš da imaš dar za slušanje i pomaganje ljudima, ali ti fali konkretna metoda koja stvarno radi.</span>
+        </div>
+        <div style="display:flex; align-items:flex-start; gap:12px; padding:16px 4px; border-bottom:1px solid oklch(90% 0.01 275);">
+          <span style="color:oklch(45% 0.11 195); font-weight:700; font-size:16px; flex:none;">✓</span>
+          <span style="font-size:15px; line-height:1.5; color:oklch(30% 0.01 275);">Već pomažeš ljudima u svom okruženju (obitelj, prijatelji) i sad želiš to raditi profesionalno.</span>
+        </div>
+        <div style="display:flex; align-items:flex-start; gap:12px; padding:16px 4px; border-bottom:1px solid oklch(90% 0.01 275);">
+          <span style="color:oklch(45% 0.11 195); font-weight:700; font-size:16px; flex:none;">✓</span>
+          <span style="font-size:15px; line-height:1.5; color:oklch(30% 0.01 275);">Tražiš edukaciju koja će ti dati jasno strukturiran sustav rada i sigurnost u vođenju klijenata.</span>
+        </div>
+        <div style="display:flex; align-items:flex-start; gap:12px; padding:16px 4px; border-bottom:1px solid oklch(90% 0.01 275);">
+          <span style="color:oklch(45% 0.11 195); font-weight:700; font-size:16px; flex:none;">✓</span>
+          <span style="font-size:15px; line-height:1.5; color:oklch(30% 0.01 275);">Nemaš pozadinu u psihologiji ili medicini &mdash; nije potrebno, a ako imaš, DIT će je dodatno obogatiti.</span>
+        </div>
+        <div style="display:flex; align-items:flex-start; gap:12px; padding:16px 4px;">
+          <span style="color:oklch(45% 0.11 195); font-weight:700; font-size:16px; flex:none;">✓</span>
+          <span style="font-size:15px; line-height:1.5; color:oklch(30% 0.01 275);">Želiš posao koji ima smisao, pruža slobodu i možeš ga raditi uživo ili online, kad god i odakle god želiš.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="width:100%; max-width:760px; padding:clamp(48px,7vw,72px) 32px; box-sizing:border-box; display:flex; flex-direction:column; align-items:center; gap:24px;">
+    <div style="text-align:center; max-width:560px; display:flex; flex-direction:column; gap:8px;">
+      <h2 style="font-family:'Newsreader',serif; font-weight:500; font-size:clamp(24px,3.2vw,30px); color:oklch(24% 0.05 275); margin:0;">Dostupni termini edukacije</h2>
+      <p style="margin:0; font-size:14.5px; color:oklch(45% 0.01 275);">Odaberi grupu i format koji ti najviše odgovaraju.</p>
+    </div>
+    <div style="width:100%; border:1px solid oklch(88% 0.01 275); border-radius:14px; overflow:hidden; background:oklch(100% 0 0); box-shadow:0 4px 16px oklch(20% 0.02 275 / 0.06);">
+      <div style="display:grid; grid-template-columns:1.1fr 1.4fr 0.9fr; background:oklch(94% 0.012 275); padding:14px 20px; box-sizing:border-box;">
+        <span style="font-family:'Work Sans',sans-serif; font-weight:700; font-size:12.5px; letter-spacing:0.04em; text-transform:uppercase; color:oklch(38% 0.02 275);">Grupa</span>
+        <span style="font-family:'Work Sans',sans-serif; font-weight:700; font-size:12.5px; letter-spacing:0.04em; text-transform:uppercase; color:oklch(38% 0.02 275);">Termini</span>
+        <span style="font-family:'Work Sans',sans-serif; font-weight:700; font-size:12.5px; letter-spacing:0.04em; text-transform:uppercase; color:oklch(38% 0.02 275); text-align:right;">Format</span>
+      </div>
+      <div style="display:grid; grid-template-columns:1.1fr 1.4fr 0.9fr; align-items:center; padding:18px 20px; box-sizing:border-box; border-top:1px solid oklch(92% 0.008 275);">
+        <span style="font-family:'Work Sans',sans-serif; font-weight:600; font-size:15px; color:oklch(24% 0.05 275);">Uživo &mdash; Zagreb</span>
+        <span style="font-size:14.5px; color:oklch(38% 0.01 275);">02.–06.12.2026.</span>
+        <span style="justify-self:end; font-family:'Work Sans',sans-serif; font-weight:600; font-size:12px; letter-spacing:0.02em; color:oklch(30% 0.08 275); background:oklch(30% 0.08 275 / 0.1); padding:5px 12px; border-radius:20px;">Uživo</span>
+      </div>
+      <div style="display:grid; grid-template-columns:1.1fr 1.4fr 0.9fr; align-items:center; padding:18px 20px; box-sizing:border-box; border-top:1px solid oklch(92% 0.008 275);">
+        <span style="font-family:'Work Sans',sans-serif; font-weight:600; font-size:15px; color:oklch(24% 0.05 275);">1. online grupa</span>
+        <span style="font-size:14.5px; color:oklch(38% 0.01 275);">09.–10.01.2027.</span>
+        <span style="justify-self:end; font-family:'Work Sans',sans-serif; font-weight:600; font-size:12px; letter-spacing:0.02em; color:oklch(45% 0.11 195); background:oklch(45% 0.11 195 / 0.1); padding:5px 12px; border-radius:20px;">Online</span>
+      </div>
+      <div style="display:grid; grid-template-columns:1.1fr 1.4fr 0.9fr; align-items:center; padding:18px 20px; box-sizing:border-box; border-top:1px solid oklch(92% 0.008 275);">
+        <span style="font-family:'Work Sans',sans-serif; font-weight:600; font-size:15px; color:oklch(24% 0.05 275);">2. online grupa</span>
+        <span style="font-size:14.5px; color:oklch(38% 0.01 275);">16.–17.01.2027.</span>
+        <span style="justify-self:end; font-family:'Work Sans',sans-serif; font-weight:600; font-size:12px; letter-spacing:0.02em; color:oklch(45% 0.11 195); background:oklch(45% 0.11 195 / 0.1); padding:5px 12px; border-radius:20px;">Online</span>
+      </div>
+      <div style="display:grid; grid-template-columns:1.1fr 1.4fr 0.9fr; align-items:center; padding:18px 20px; box-sizing:border-box; border-top:1px solid oklch(92% 0.008 275);">
+        <span style="font-family:'Work Sans',sans-serif; font-weight:600; font-size:15px; color:oklch(24% 0.05 275);">Uživo &mdash; Zagreb</span>
+        <span style="font-size:14.5px; color:oklch(38% 0.01 275);">27.–31.01.2027.</span>
+        <span style="justify-self:end; font-family:'Work Sans',sans-serif; font-weight:600; font-size:12px; letter-spacing:0.02em; color:oklch(30% 0.08 275); background:oklch(30% 0.08 275 / 0.1); padding:5px 12px; border-radius:20px;">Uživo</span>
+      </div>
+    </div>
+
+    <div class="reserve-card">
+      <div class="reserve-card-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 9h18"/><path d="M8 3v4"/><path d="M16 3v4"/></svg>
+      </div>
+      <h3 style="margin:0; font-family:'Newsreader',serif; font-weight:500; font-size:22px; color:oklch(24% 0.05 275);">Rezerviraj svoje mjesto</h3>
+      <p style="margin:0; font-size:14.5px; line-height:1.6; color:oklch(45% 0.01 275); max-width:420px;">Klikni na gumb, popuni kratku prijavu na sljedećoj stranici i javit ćemo ti se s detaljima o odabranom terminu.</p>
+      <a href="https://ditinstitut.com/forma" style="text-decoration:none; background:oklch(45% 0.11 195); color:oklch(99% 0.01 195); font-family:'Work Sans',sans-serif; font-weight:600; font-size:16px; padding:14px 40px; border-radius:8px; box-shadow:0 10px 30px -8px oklch(45% 0.11 195 / 0.5); cursor:pointer; text-align:center; line-height:1.3; margin-top:6px;">Rezerviraj svoje mjesto</a>
+      <div class="reserve-steps">
+        <span class="reserve-step"><span class="reserve-step-num">1</span>Popuni prijavu</span>
+        <span class="reserve-step"><span class="reserve-step-num">2</span>Javljamo se s detaljima</span>
+        <span class="reserve-step"><span class="reserve-step-num">3</span>Potvrdi svoj termin</span>
+      </div>
+    </div>
+  </section>
+
+  <section style="width:100%; background:oklch(97% 0.008 90); padding:clamp(48px,7vw,72px) 32px; box-sizing:border-box; display:flex; flex-direction:column; align-items:center; gap:32px;">
+    <div style="text-align:center; max-width:560px; display:flex; flex-direction:column; gap:8px;">
+      <h2 style="font-family:'Newsreader',serif; font-weight:500; font-size:clamp(24px,3.2vw,30px); color:oklch(24% 0.05 275); margin:0;">Poruke koje Karmen dobije nakon svake edukacije</h2>
+      <p style="margin:0; font-size:14.5px; color:oklch(45% 0.01 275);">Stvarni odlomci iz mailova polaznica, nekoliko dana nakon završetka.</p>
+    </div>
+    <div class="chat-grid">
+      <div class="chat-bubble">
+        <div class="chat-bubble-header"><div class="chat-avatar">JK</div><span class="chat-name">Jasminka Krnić</span><span class="chat-check">✓✓</span></div>
+        <p class="chat-text">"Ono što sam dobila nakon edukacije je još puno, puno više. Sada više nisam uvjerena, sada to znam."</p>
+      </div>
+      <div class="chat-bubble">
+        <div class="chat-bubble-header"><div class="chat-avatar">MM</div><span class="chat-name">Maja Marijić</span><span class="chat-check">✓✓</span></div>
+        <p class="chat-text">"Dobila sam 'protokol duboke zahvalnosti' kroz sve što sam čula, vidjela i doživjela."</p>
+      </div>
+      <div class="chat-bubble">
+        <div class="chat-bubble-header"><div class="chat-avatar">VP</div><span class="chat-name">Valentina Petrušić</span><span class="chat-check">✓✓</span></div>
+        <p class="chat-text">"Bila si jasna, konkretna i išla odmah u srž — izašli smo s osjećajem podrške i samopouzdanja da se odmah bacimo na posao."</p>
+      </div>
+      <div class="chat-bubble">
+        <div class="chat-bubble-header"><div class="chat-avatar">MC</div><span class="chat-name">Matea-Karmen Cvjetanović</span><span class="chat-check">✓✓</span></div>
+        <p class="chat-text">"Došla sam s 3 ogromna upitnika iznad glave, a otišla s jasnoćom po pitanju zdravlja, odnosa, posla."</p>
+      </div>
+      <div class="chat-bubble">
+        <div class="chat-bubble-header"><div class="chat-avatar">LB</div><span class="chat-name">Lidija Banai</span><span class="chat-check">✓✓</span></div>
+        <p class="chat-text">"Uzbuđuje me pomisao da ću imati priliku ovom jednostavnom, jedinstvenom metodom pomagati ljudima."</p>
+      </div>
+      <div class="chat-bubble">
+        <div class="chat-bubble-header"><div class="chat-avatar">AJ</div><span class="chat-name">Andreja Jureković P.</span><span class="chat-check">✓✓</span></div>
+        <p class="chat-text">"Tvoj pristup poučavanju je uistinu izvanredan — vodila si nas blago i nježno, a opet autoritativno i čvrsto."</p>
+      </div>
+      <div class="chat-bubble">
+        <div class="chat-bubble-header"><div class="chat-avatar">AG</div><span class="chat-name">Anita Grgoš</span><span class="chat-check">✓✓</span></div>
+        <p class="chat-text">"Ova hipnoterapija je zaista moćna. Osjetila sam se mirna, sretna, treperava s mišlju — ja to mogu 💪"</p>
+      </div>
+      <div class="chat-bubble">
+        <div class="chat-bubble-header"><div class="chat-avatar">DK</div><span class="chat-name">Danijela Kampl</span><span class="chat-check">✓✓</span></div>
+        <p class="chat-text">"Sigurno i podržavajuće okruženje u kojem je bilo lako učiti, otvoriti se i rasti."</p>
+      </div>
+    </div>
+  </section>
+
+  <section style="width:100%; background:oklch(20% 0.05 275); padding:clamp(56px,8vw,88px) 32px; box-sizing:border-box; display:flex; justify-content:center;">
+    <div style="max-width:620px; display:flex; flex-direction:column; align-items:center; gap:18px; text-align:center;">
+      <h2 style="font-family:'Newsreader',serif; font-weight:500; font-size:clamp(26px,3.4vw,32px); color:oklch(97% 0.005 275); margin:0;">Kad se riješi uzrok, mijenja se sve što je s njim povezano</h2>
+      <p style="margin:0; font-size:15.5px; line-height:1.65; color:oklch(80% 0.02 275); max-width:560px;">Klijenti dolaze s jednim konkretnim problemom &mdash; a često se, bez dodatnog rada, riješi i neki drugi problem koji dijeli isti uzrok.</p>
+      <p style="margin:0; font-size:15.5px; line-height:1.65; color:oklch(80% 0.02 275); max-width:560px;">Sama seansa iznenađujuće je ugodna i brzo prođe &mdash; nema drame, nema neugode koju ljudi očekuju.</p>
+    </div>
+  </section>
+
+  <section style="width:100%; max-width:1100px; padding:clamp(48px,7vw,72px) 32px 0; box-sizing:border-box; display:flex; flex-direction:column; align-items:center; gap:32px;">
+    <div style="text-align:center; max-width:600px; display:flex; flex-direction:column; gap:8px;">
+      <h2 style="font-family:'Newsreader',serif; font-weight:500; font-size:clamp(24px,3.2vw,30px); color:oklch(24% 0.05 275); margin:0;">Karmen kao gošća na podcastima</h2>
+      <p style="margin:0; font-size:14.5px; color:oklch(45% 0.01 275);">Poslušaj Karmen kako o DIT metodi i radu s podsvijesti govori na poznatim hrvatskim podcastima.</p>
+    </div>
+    <div class="podcast-grid" style="display:grid; grid-template-columns:repeat(4, 1fr); gap:16px; width:100%;">
+      <div style="position:relative; width:100%; aspect-ratio:16/9; border-radius:12px; overflow:hidden; box-shadow:0 4px 16px oklch(20% 0.02 275 / 0.1); background:oklch(18% 0.04 275); cursor:pointer;" onclick="loadYouTube(this,'y5vhqQrpda8')">
+        <img src="https://img.youtube.com/vi/y5vhqQrpda8/hqdefault.jpg" alt="Podcast gostovanje 1" loading="lazy" style="width:100%; height:100%; object-fit:cover; display:block;">
+        <div style="position:absolute; inset:0; display:flex; align-items:center; justify-content:center; background:oklch(10% 0.01 275 / 0.15);"><div style="width:52px; height:52px; border-radius:50%; background:oklch(100% 0 0 / 0.92); display:flex; align-items:center; justify-content:center;"><div style="width:0; height:0; border-left:16px solid oklch(30% 0.06 275); border-top:10px solid transparent; border-bottom:10px solid transparent; margin-left:3px;"></div></div></div>
+      </div>
+      <div style="position:relative; width:100%; aspect-ratio:16/9; border-radius:12px; overflow:hidden; box-shadow:0 4px 16px oklch(20% 0.02 275 / 0.1); background:oklch(18% 0.04 275); cursor:pointer;" onclick="loadYouTube(this,'Vzk7b12OwD0')">
+        <img src="https://img.youtube.com/vi/Vzk7b12OwD0/hqdefault.jpg" alt="Podcast gostovanje 2" loading="lazy" style="width:100%; height:100%; object-fit:cover; display:block;">
+        <div style="position:absolute; inset:0; display:flex; align-items:center; justify-content:center; background:oklch(10% 0.01 275 / 0.15);"><div style="width:52px; height:52px; border-radius:50%; background:oklch(100% 0 0 / 0.92); display:flex; align-items:center; justify-content:center;"><div style="width:0; height:0; border-left:16px solid oklch(30% 0.06 275); border-top:10px solid transparent; border-bottom:10px solid transparent; margin-left:3px;"></div></div></div>
+      </div>
+      <div style="position:relative; width:100%; aspect-ratio:16/9; border-radius:12px; overflow:hidden; box-shadow:0 4px 16px oklch(20% 0.02 275 / 0.1); background:oklch(18% 0.04 275); cursor:pointer;" onclick="loadYouTube(this,'SE9QUL5jMYQ')">
+        <img src="https://img.youtube.com/vi/SE9QUL5jMYQ/hqdefault.jpg" alt="Podcast gostovanje 3" loading="lazy" style="width:100%; height:100%; object-fit:cover; display:block;">
+        <div style="position:absolute; inset:0; display:flex; align-items:center; justify-content:center; background:oklch(10% 0.01 275 / 0.15);"><div style="width:52px; height:52px; border-radius:50%; background:oklch(100% 0 0 / 0.92); display:flex; align-items:center; justify-content:center;"><div style="width:0; height:0; border-left:16px solid oklch(30% 0.06 275); border-top:10px solid transparent; border-bottom:10px solid transparent; margin-left:3px;"></div></div></div>
+      </div>
+      <div style="position:relative; width:100%; aspect-ratio:16/9; border-radius:12px; overflow:hidden; box-shadow:0 4px 16px oklch(20% 0.02 275 / 0.1); background:oklch(18% 0.04 275); cursor:pointer;" onclick="loadYouTube(this,'ZcQmTmLklAg')">
+        <img src="https://img.youtube.com/vi/ZcQmTmLklAg/hqdefault.jpg" alt="Podcast gostovanje 4" loading="lazy" style="width:100%; height:100%; object-fit:cover; display:block;">
+        <div style="position:absolute; inset:0; display:flex; align-items:center; justify-content:center; background:oklch(10% 0.01 275 / 0.15);"><div style="width:52px; height:52px; border-radius:50%; background:oklch(100% 0 0 / 0.92); display:flex; align-items:center; justify-content:center;"><div style="width:0; height:0; border-left:16px solid oklch(30% 0.06 275); border-top:10px solid transparent; border-bottom:10px solid transparent; margin-left:3px;"></div></div></div>
+      </div>
+      <div style="position:relative; width:100%; aspect-ratio:16/9; border-radius:12px; overflow:hidden; box-shadow:0 4px 16px oklch(20% 0.02 275 / 0.1); background:oklch(18% 0.04 275); cursor:pointer;" onclick="loadYouTube(this,'WlhJd7-CDTE')">
+        <img src="https://img.youtube.com/vi/WlhJd7-CDTE/hqdefault.jpg" alt="Podcast gostovanje 5" loading="lazy" style="width:100%; height:100%; object-fit:cover; display:block;">
+        <div style="position:absolute; inset:0; display:flex; align-items:center; justify-content:center; background:oklch(10% 0.01 275 / 0.15);"><div style="width:52px; height:52px; border-radius:50%; background:oklch(100% 0 0 / 0.92); display:flex; align-items:center; justify-content:center;"><div style="width:0; height:0; border-left:16px solid oklch(30% 0.06 275); border-top:10px solid transparent; border-bottom:10px solid transparent; margin-left:3px;"></div></div></div>
+      </div>
+      <div style="position:relative; width:100%; aspect-ratio:16/9; border-radius:12px; overflow:hidden; box-shadow:0 4px 16px oklch(20% 0.02 275 / 0.1); background:oklch(18% 0.04 275); cursor:pointer;" onclick="loadYouTube(this,'CBi_R8ARRts')">
+        <img src="https://img.youtube.com/vi/CBi_R8ARRts/hqdefault.jpg" alt="Podcast gostovanje 6" loading="lazy" style="width:100%; height:100%; object-fit:cover; display:block;">
+        <div style="position:absolute; inset:0; display:flex; align-items:center; justify-content:center; background:oklch(10% 0.01 275 / 0.15);"><div style="width:52px; height:52px; border-radius:50%; background:oklch(100% 0 0 / 0.92); display:flex; align-items:center; justify-content:center;"><div style="width:0; height:0; border-left:16px solid oklch(30% 0.06 275); border-top:10px solid transparent; border-bottom:10px solid transparent; margin-left:3px;"></div></div></div>
+      </div>
+      <div style="position:relative; width:100%; aspect-ratio:16/9; border-radius:12px; overflow:hidden; box-shadow:0 4px 16px oklch(20% 0.02 275 / 0.1); background:oklch(18% 0.04 275); cursor:pointer;" onclick="loadYouTube(this,'SdyO2K76fM0')">
+        <img src="https://img.youtube.com/vi/SdyO2K76fM0/hqdefault.jpg" alt="Podcast gostovanje 7" loading="lazy" style="width:100%; height:100%; object-fit:cover; display:block;">
+        <div style="position:absolute; inset:0; display:flex; align-items:center; justify-content:center; background:oklch(10% 0.01 275 / 0.15);"><div style="width:52px; height:52px; border-radius:50%; background:oklch(100% 0 0 / 0.92); display:flex; align-items:center; justify-content:center;"><div style="width:0; height:0; border-left:16px solid oklch(30% 0.06 275); border-top:10px solid transparent; border-bottom:10px solid transparent; margin-left:3px;"></div></div></div>
+      </div>
+      <div style="position:relative; width:100%; aspect-ratio:16/9; border-radius:12px; overflow:hidden; box-shadow:0 4px 16px oklch(20% 0.02 275 / 0.1); background:oklch(18% 0.04 275); cursor:pointer;" onclick="loadYouTube(this,'DsOcILGccbk')">
+        <img src="https://img.youtube.com/vi/DsOcILGccbk/hqdefault.jpg" alt="Podcast gostovanje 8" loading="lazy" style="width:100%; height:100%; object-fit:cover; display:block;">
+        <div style="position:absolute; inset:0; display:flex; align-items:center; justify-content:center; background:oklch(10% 0.01 275 / 0.15);"><div style="width:52px; height:52px; border-radius:50%; background:oklch(100% 0 0 / 0.92); display:flex; align-items:center; justify-content:center;"><div style="width:0; height:0; border-left:16px solid oklch(30% 0.06 275); border-top:10px solid transparent; border-bottom:10px solid transparent; margin-left:3px;"></div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section style="width:100%; max-width:720px; padding:clamp(56px,7vw,80px) 32px 96px; box-sizing:border-box; display:flex; flex-direction:column; align-items:center; gap:28px;">
+    <h2 style="font-family:'Newsreader',serif; font-weight:500; font-size:30px; color:oklch(24% 0.05 275); margin:0; text-align:center;">Pitanja koja nam ljudi najčešće postave</h2>
+    <div style="display:flex; flex-direction:column; gap:10px; width:100%;">
+      <div class="faq-item" style="border:1px solid oklch(85% 0.01 275); border-radius:10px; background:oklch(100% 0 0); overflow:hidden;">
+        <div onclick="this.parentElement.classList.toggle('open'); this.querySelector('.faq-symbol').textContent = this.parentElement.classList.contains('open') ? '−' : '+';" style="padding:18px 20px; display:flex; align-items:center; justify-content:space-between; cursor:pointer; gap:16px;">
+          <span style="font-weight:600; font-size:15.5px; color:oklch(26% 0.01 275); text-align:left;">Treba li mi prethodno iskustvo u psihologiji ili medicini?</span>
+          <span class="faq-symbol" style="font-size:20px; color:oklch(45% 0.11 195); flex:none;">+</span>
+        </div>
+        <p class="faq-a" style="margin:0; padding:0 20px 20px; font-size:14.5px; line-height:1.6; color:oklch(45% 0.01 275); text-align:left;">Ne. Edukacija je strukturirana tako da polaznici bez prethodnog profesionalnog iskustva mogu sigurno savladati metodu, korak po korak. U DIT-u klijent dobiva odgovore od sebe, a terapeut ga samo vodi, postavljajući precizna, točno određena pitanja — ne daje svoja objašnjenja ili savjete.</p>
+      </div>
+      <div class="faq-item" style="border:1px solid oklch(85% 0.01 275); border-radius:10px; background:oklch(100% 0 0); overflow:hidden;">
+        <div onclick="this.parentElement.classList.toggle('open'); this.querySelector('.faq-symbol').textContent = this.parentElement.classList.contains('open') ? '−' : '+';" style="padding:18px 20px; display:flex; align-items:center; justify-content:space-between; cursor:pointer; gap:16px;">
+          <span style="font-weight:600; font-size:15.5px; color:oklch(26% 0.01 275); text-align:left;">Je li DIT metoda znanstveno utemeljena?</span>
+          <span class="faq-symbol" style="font-size:20px; color:oklch(45% 0.11 195); flex:none;">+</span>
+        </div>
+        <p class="faq-a" style="margin:0; padding:0 20px 20px; font-size:14.5px; line-height:1.6; color:oklch(45% 0.01 275); text-align:left;">DIT je razvijen na temeljima znanstvenih spoznaja iz hipnoterapije, psihologije i neuroznanosti. U radu objedinjuje istražene principe funkcioniranja uma s vlastitim strukturiranim procesom rada s podsvjesnim i nadsvjesnim, kako bi svakoj osobi omogućio individualan put prema trajnoj promjeni.</p>
+      </div>
+      <div class="faq-item" style="border:1px solid oklch(85% 0.01 275); border-radius:10px; background:oklch(100% 0 0); overflow:hidden;">
+        <div onclick="this.parentElement.classList.toggle('open'); this.querySelector('.faq-symbol').textContent = this.parentElement.classList.contains('open') ? '−' : '+';" style="padding:18px 20px; display:flex; align-items:center; justify-content:space-between; cursor:pointer; gap:16px;">
+          <span style="font-weight:600; font-size:15.5px; color:oklch(26% 0.01 275); text-align:left;">Koliko traje edukacija i u kojem formatu se odvija?</span>
+          <span class="faq-symbol" style="font-size:20px; color:oklch(45% 0.11 195); flex:none;">+</span>
+        </div>
+        <p class="faq-a" style="margin:0; padding:0 20px 20px; font-size:14.5px; line-height:1.6; color:oklch(45% 0.01 275); text-align:left;">Edukacija traje 5 dana, održava se uživo u Zagrebu ili online. Neovisno o formatu, bazirana je na praktičnom radu pa polaznici odmah stječu iskustvo. Vježbe se rade na stvarnim temama i one se rješavaju već tijekom same edukacije.</p>
+      </div>
+      <div class="faq-item" style="border:1px solid oklch(85% 0.01 275); border-radius:10px; background:oklch(100% 0 0); overflow:hidden;">
+        <div onclick="this.parentElement.classList.toggle('open'); this.querySelector('.faq-symbol').textContent = this.parentElement.classList.contains('open') ? '−' : '+';" style="padding:18px 20px; display:flex; align-items:center; justify-content:space-between; cursor:pointer; gap:16px;">
+          <span style="font-weight:600; font-size:15.5px; color:oklch(26% 0.01 275); text-align:left;">Dobivam li certifikat na kraju?</span>
+          <span class="faq-symbol" style="font-size:20px; color:oklch(45% 0.11 195); flex:none;">+</span>
+        </div>
+        <p class="faq-a" style="margin:0; padding:0 20px 20px; font-size:14.5px; line-height:1.6; color:oklch(45% 0.01 275); text-align:left;">Da, nakon uspješno završene edukacije dobivaš certifikat koji potvrđuje da si osposobljen/a za rad DIT metodom.</p>
+      </div>
+      <div class="faq-item" style="border:1px solid oklch(85% 0.01 275); border-radius:10px; background:oklch(100% 0 0); overflow:hidden;">
+        <div onclick="this.parentElement.classList.toggle('open'); this.querySelector('.faq-symbol').textContent = this.parentElement.classList.contains('open') ? '−' : '+';" style="padding:18px 20px; display:flex; align-items:center; justify-content:space-between; cursor:pointer; gap:16px;">
+          <span style="font-weight:600; font-size:15.5px; color:oklch(26% 0.01 275); text-align:left;">Mogu li stvarno početi raditi s klijentima odmah nakon edukacije?</span>
+          <span class="faq-symbol" style="font-size:20px; color:oklch(45% 0.11 195); flex:none;">+</span>
+        </div>
+        <p class="faq-a" style="margin:0; padding:0 20px 20px; font-size:14.5px; line-height:1.6; color:oklch(45% 0.01 275); text-align:left;">Da, nakon edukacije potpuno ste osposobljeni napraviti samostalno hipnoterapijsku sesiju s klijentom. Edukacija uključuje i modul o pronalasku i zadržavanju klijenata, pa je brzi start vrlo realan. Uvijek ovisi o angažmanu samog terapeuta.</p>
+      </div>
+      <div class="faq-item" style="border:1px solid oklch(85% 0.01 275); border-radius:10px; background:oklch(100% 0 0); overflow:hidden;">
+        <div onclick="this.parentElement.classList.toggle('open'); this.querySelector('.faq-symbol').textContent = this.parentElement.classList.contains('open') ? '−' : '+';" style="padding:18px 20px; display:flex; align-items:center; justify-content:space-between; cursor:pointer; gap:16px;">
+          <span style="font-weight:600; font-size:15.5px; color:oklch(26% 0.01 275); text-align:left;">Što ako mi termin sljedeće grupe ne odgovara?</span>
+          <span class="faq-symbol" style="font-size:20px; color:oklch(45% 0.11 195); flex:none;">+</span>
+        </div>
+        <p class="faq-a" style="margin:0; padding:0 20px 20px; font-size:14.5px; line-height:1.6; color:oklch(45% 0.01 275); text-align:left;">Grupa se otvara nekoliko puta godišnje. Na pozivu s Karmen dogovarate koji termin vam najviše odgovara.</p>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<div class="dit-footer-wrap">
+  <footer style="width:100%; background:oklch(22% 0.02 275); color:oklch(80% 0.01 275); padding:36px 32px; box-sizing:border-box; display:flex; flex-direction:column; align-items:center; gap:8px; text-align:center; font-family:'Work Sans',sans-serif;">
+    <div style="font-family:'Newsreader',serif; font-size:16px; color:oklch(96% 0.005 275);">DIT Institut &mdash; Karmen Jerković</div>
+    <div style="font-size:13px;">jerkovickarmen@gmail.com &nbsp;&middot;&nbsp; +385 97 688 8791 &nbsp;&middot;&nbsp;</div>
+    <div style="font-size:12px; opacity:0.6; margin-top:8px;">&copy; 2026 DIT Institut. Sva prava pridržana.</div>
+  </footer>
+</div>
+
+<script>
+  function openTestimonialModal(url) {
+    var modal = document.getElementById('testimonial-modal');
+    var video = document.getElementById('testimonial-modal-video');
+    video.src = url;
+    video.muted = false;
+    modal.style.display = 'flex';
+    video.play();
+  }
+  function closeTestimonialModal() {
+    var modal = document.getElementById('testimonial-modal');
+    var video = document.getElementById('testimonial-modal-video');
+    video.pause();
+    video.src = '';
+    modal.style.display = 'none';
+  }
+  function loadYouTube(el, id) {
+    el.onclick = null;
+    el.style.cursor = 'default';
+    el.innerHTML = '<iframe src="https://www.youtube.com/embed/' + id + '?autoplay=1" title="Podcast" style="width:100%; height:100%; border:0; display:block;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>';
+  }
+</script>
+
+<script>
+  var testimonialVideos = [
+    { name: 'Marija Večkalov', url: 'https://assets.cdn.filesafe.space/ZvcMC6nxu7v212Y6rFzC/media/6a6a4cc7baa5a87f993d03e0.mp4' },
+    { name: 'Snježana Gottstein', url: 'https://assets.cdn.filesafe.space/ZvcMC6nxu7v212Y6rFzC/media/6a774b7203343f290f0e00f8.mp4' },
+    { name: 'Selma Džihanović', url: 'https://assets.cdn.filesafe.space/ZvcMC6nxu7v212Y6rFzC/media/6a74622895133c525501dbbf.mp4' },
+    { name: 'Matea-Karmen Cvjetanović', url: 'https://assets.cdn.filesafe.space/ZvcMC6nxu7v212Y6rFzC/media/6a7a0103157190b35960b6bb.mp4' },
+    { name: 'Katarina Vučetić', url: 'https://assets.cdn.filesafe.space/ZvcMC6nxu7v212Y6rFzC/media/6a74605daa3b4583bbb1c087.mp4' },
+    { name: 'Planinka Popović-Oršoš', url: 'https://assets.cdn.filesafe.space/ZvcMC6nxu7v212Y6rFzC/media/6a6a4cc7eb781ab2629fedc4.mov' },
+    { name: 'Ivana Knežević', url: 'https://assets.cdn.filesafe.space/ZvcMC6nxu7v212Y6rFzC/media/6a79fb6ace051431a0d422a6.mp4' },
+    { name: 'Slavica Predragović', url: 'https://assets.cdn.filesafe.space/ZvcMC6nxu7v212Y6rFzC/media/6a6a4c7e7d99a224643d49c9.mp4' },
+    { name: 'Stella Samardžić', url: 'https://assets.cdn.filesafe.space/ZvcMC6nxu7v212Y6rFzC/media/6a7461fd568ec735246abb7a.mp4' },
+    { name: 'Danche Paunovska', url: 'https://assets.cdn.filesafe.space/ZvcMC6nxu7v212Y6rFzC/media/6a6a4c7e855e619069ab47cf.mp4' },
+    { name: 'dr. Brane Kobal', url: 'https://assets.cdn.filesafe.space/ZvcMC6nxu7v212Y6rFzC/media/6a79fdc9ce051431a0d72f34.mp4' },
+    { name: 'Dragana Rizk', url: 'https://assets.cdn.filesafe.space/ZvcMC6nxu7v212Y6rFzC/media/6a7460403ee92d7b631ea5c6.mp4' },
+    { name: 'Günter Reiter (njemački)', url: 'https://assets.cdn.filesafe.space/ZvcMC6nxu7v212Y6rFzC/media/6a6a4c117d99a224643d3ddc.mp4' },
+    { name: 'Jasmina Rodić', url: 'https://assets.cdn.filesafe.space/ZvcMC6nxu7v212Y6rFzC/media/6a6a4c117d99a224643d3de1.mov' },
+    { name: 'Valentina Petrušić', url: 'https://assets.cdn.filesafe.space/ZvcMC6nxu7v212Y6rFzC/media/6a775f9f8880872019f703aa.mp4' },
+    { name: 'Maja Marijić', url: 'https://assets.cdn.filesafe.space/ZvcMC6nxu7v212Y6rFzC/media/6a6a4cc7cdfcf049563b7e27.mp4' },
+    { name: 'Božela Vulević', url: 'https://assets.cdn.filesafe.space/ZvcMC6nxu7v212Y6rFzC/media/6a6a4c118c38306c3d822879.mp4' },
+    { name: 'dr. Sanja Milanović', url: 'https://assets.cdn.filesafe.space/ZvcMC6nxu7v212Y6rFzC/media/6a7460b1e76789340f6c5bcc.mp4' },
+    { name: 'Marija Maca Čajić Simić', url: 'https://assets.cdn.filesafe.space/ZvcMC6nxu7v212Y6rFzC/media/6a6a4cb10aea34991e1a1c68.mp4' },
+    { name: 'Vesna Zadravec', url: 'https://assets.cdn.filesafe.space/ZvcMC6nxu7v212Y6rFzC/media/6a6a4cb2baa5a87f993d00aa.mp4' },
+    { name: 'Maja Mašić', url: 'https://assets.cdn.filesafe.space/ZvcMC6nxu7v212Y6rFzC/media/6a6a4c5f855e619069ab43d9.mp4' },
+    { name: 'Tatjana Trupeljak', url: 'https://assets.cdn.filesafe.space/ZvcMC6nxu7v212Y6rFzC/media/6a6a4c5fbaa5a87f993cf367.mp4' },
+    { name: 'Jana Biščević', url: 'https://assets.cdn.filesafe.space/ZvcMC6nxu7v212Y6rFzC/media/6a6a4c5feb781ab2629fb85d.mp4' },
+    { name: 'Dunja Paljar', url: 'https://assets.cdn.filesafe.space/ZvcMC6nxu7v212Y6rFzC/media/6a6a4c5fe1cc940b5d824994.mp4' },
+    { name: 'Tamara Dejanić Gatalo', url: 'https://assets.cdn.filesafe.space/ZvcMC6nxu7v212Y6rFzC/media/6a6a4c5f7d99a224643d45b9.mp4' },
+    { name: 'Anita Grgoš', url: 'https://assets.cdn.filesafe.space/ZvcMC6nxu7v212Y6rFzC/media/6a6a4c9c0aea34991e1a1a21.mp4' },
+    { name: 'Danijela Kampl', url: 'https://assets.cdn.filesafe.space/ZvcMC6nxu7v212Y6rFzC/media/6a6a4cb1c0edd70fbc9fb7b4.mp4' },
+    { name: 'Dobrila Vrančić', url: 'https://assets.cdn.filesafe.space/ZvcMC6nxu7v212Y6rFzC/media/6a776d0703343f290f61e8d6.mp4' },
+    { name: 'Patricija Pavić', url: 'https://assets.cdn.filesafe.space/ZvcMC6nxu7v212Y6rFzC/media/6a77468c5a64f2b567a306cd.mp4' },
+    { name: 'Dario Đuričić', url: 'https://assets.cdn.filesafe.space/ZvcMC6nxu7v212Y6rFzC/media/6a774b775a64f2b567b230c7.mp4' },
+    { name: 'Merima Coralić', url: 'https://assets.cdn.filesafe.space/ZvcMC6nxu7v212Y6rFzC/media/6a77462a9994d35aa04baa4e.mp4' },
+    { name: 'Irena Knežević Kelebuda', url: 'https://assets.cdn.filesafe.space/ZvcMC6nxu7v212Y6rFzC/media/6a77452803343f290ffcc0c5.mp4' }
+  ];
+  var grid = document.getElementById('testimonial-grid');
+  var html = '';
+  for (var i = 0; i < testimonialVideos.length; i++) {
+    var item = testimonialVideos[i];
+    html += '<div onclick="openTestimonialModal(\'' + item.url + '\')" style="display:flex; flex-direction:column; border-radius:10px; overflow:hidden; background:oklch(100% 0 0); box-shadow:0 1px 3px oklch(20% 0.02 275 / 0.08); cursor:pointer;">' +
+      '<div style="position:relative; width:100%; aspect-ratio:3/4; background:oklch(18% 0.04 275); overflow:hidden;">' +
+      '<video src="' + item.url + '" autoplay muted loop playsinline style="width:100%; height:100%; object-fit:cover; display:block;"></video>' +
+      '<div style="position:absolute; inset:0; display:flex; align-items:center; justify-content:center; background:oklch(10% 0.01 275 / 0.15);">' +
+      '<div style="width:34px; height:34px; border-radius:50%; background:oklch(100% 0 0 / 0.9); display:flex; align-items:center; justify-content:center;">' +
+      '<div style="width:0; height:0; border-left:10px solid oklch(30% 0.06 275); border-top:6px solid transparent; border-bottom:6px solid transparent; margin-left:2px;"></div>' +
+      '</div></div>' +
+      '</div><div style="padding:8px 10px; font-size:12.5px; font-weight:500; color:oklch(32% 0.01 275); text-align:center;">' + item.name + '</div></div>';
+  }
+  grid.innerHTML = html;
+</script>
+
+<div id="testimonial-modal" onclick="if(event.target===this) closeTestimonialModal();" style="display:none; position:fixed; inset:0; z-index:1000; background:oklch(10% 0.01 275 / 0.88); align-items:center; justify-content:center; padding:24px; box-sizing:border-box;">
+  <div style="position:relative; width:100%; max-width:420px;">
+    <button onclick="closeTestimonialModal();" style="position:absolute; top:-44px; right:0; background:none; border:none; color:oklch(97% 0.005 275); font-size:32px; line-height:1; cursor:pointer; padding:6px;">&times;</button>
+    <video id="testimonial-modal-video" controls autoplay playsinline style="width:100%; max-height:82vh; border-radius:12px; display:block; background:#000;"></video>
+  </div>
+</div>
+
+</body>
+</html>
